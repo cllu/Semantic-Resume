@@ -1,69 +1,170 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8" />
-	<title>John Appleseed — Resume</title>
-	<link rel="shortcut icon" href="/favicon.ico"/>
-	<link rel="apple-touch-icon" href="/joyneop.png"/>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="yart-main.css">
-	<script src="./yart.js"></script>
-	<style>
-	#source-md {
-		display: none;
-	}
-	</style>
-	<script type="text/javascript">
-	window.addEventListener('load', function(){
-		window.theDoms = document.body.getElementsByClassName('lazy-display-animation');
-		window.theDelay = 50;
-		for (var i = 0; i < window.theDoms.length; i++) {
-			setTimeout((function(ii){
-				var _fu = function () {
-					window.theDoms[ii].classList.add('played');
-				};
-				return _fu;
-			})(i), window.theDelay*i);
-		};
-		[].map.call(document.body.getElementsByTagName('a'), function (n) {
-			anchors[i].target = '_blank';
-		});
-		[].map.call(document.body.querySelectorAll('img[data-async-src]'), function (n) {
-			n.src = n.getAttribute('data-async-src');
-		});
-	}, false);
-	</script>
+  <meta charset="utf-8"/>
+  <title>Chunliang Lyu — Resume</title>
+  <link rel="shortcut icon" href="/favicon.ico"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="resume.css">
 </head>
 <body>
-	<div class="download-button-container">
-		<a class="download-button lazy-display-animation" href="/resume/joyneop_resume.pdf">Download PDF</a>
-	</div>
-	<div class="page-start"></div>
-	<div id="source-md">
-		@ John Appleseed
 
-		@@ TEL: [+1 (408) 555-5555](tel:+1-408-555-5555)
-		@@ Email: [john.appleseed@example.com](mailto:john.appleseed@example.com)
+<div class="page-start"></div>
 
-		# Experience
+<div class="grand cont">
 
-		// Current
+  <nav>
+    <img class="avatar" data-async-src="/joyneop.png" src="/joyneop.png">
 
-		## Job Title @ Company {10/2015—Present}
+    <h1>Chunliang Lyu</h1>
 
-		Detailed description of this period of experience.
+    <div class="contact">
+      <em>Website</em><a href="https://chunlianglyu.com/" target="_blank">chunlianglyu.com</a>
+    </div>
+    <div class="contact">
+      <em>GitHub</em><a href="https://github.com/cllu" target="_blank">github.com/cllu</a>
+    </div>
+    <div class="contact">
+      <em>Email</em><a href="mailto:hi@chunlianglyu.com" target="_blank">hi@chunlianglyu.com</a>
+    </div>
+  </nav>
 
-		:: Learn more: [github.com/joyneop/yart](https://github.com/joyneop/yart)
+  <main>
 
-		==== A line starting with four equal signs will generate a page break for printing.
-	</div>
-	<div class="grand cont" id="cont">
-		<img class="avatar" data-async-src="./avatar.png">
-	</div>
-	<script type="text/javascript">
-	var source = document.getElementById('source-md').innerHTML;
-	document.getElementById('source-md').remove()
-	resumeMarkdownParser(source);
-	</script>
+    <article class="education">
+      <h2>Education</h2>
+
+      <section>
+        <header>
+          The Chinese University of Hong Kong
+          <span class="duration">(08/2011 to now)</span>
+        </header>
+        <p>Research area: Entity Retrieval, Text Mining</p>
+
+        <p></p>
+      </section>
+
+      <section>
+        <header>
+          National Taiwan University of Science and Technology
+          <span class="duration">(01/2011 - 06/2011)</span>
+        </header>
+        <p>Exchange student in Computer Science and Engineering Department</p>
+      </section>
+      <section>
+        <header>
+          Beijing Institute of Technology
+          <span class="duration">(09/2007 - 06/2011)</span>
+        </header>
+        <p>Bachelor in Electronic Engineering</p>
+      </section>
+    </article>
+
+    <article class="publication">
+      <h2>Publication</h2>
+      <ol>
+        <li>Chunliang Lu, Wai Lam, Yi Liao.
+          Entity Retrieval via Entity Factoid Hierarchy.
+          In: Proceedings of the 53rd Annual Meeting of the Association for Computational Linguistics and the 7th
+          International Joint Conference on Natural Language Processing of the Asian Federation of Natural Language
+          Processing, {ACL} 2015,
+          July 26-31, 2015, Beijing, China, Volume 1: Long Papers.
+        </li>
+        <li>Lidong Bing, Wai Lam, Shoaib Jameel, and Chunliang Lu.
+          Website Community Mining from Query Logs with Two-phase Clustering. In: Proceedings of the 15th International
+          Conference on Intelligent Text Processing and Computational Linguistics(CICLing’14, full paper). Kathmandu,
+          Nepal.
+          April 6-12, 2014.
+        </li>
+        <li>Chunliang Lu, Lidong Bing, Wai Lam, Ki Chan and Yuan Gu.
+          Web Entity Detection for Semi-structured Text Data Records with Unlabeled Data.
+          International Journal of Computational Linguistics and Applications (IJCLA). 2013.
+        </li>
+        <li>Chunliang Lu, Lidong Bing, and Wai Lam. Structured Positional Entity Language Model for Enterprise Entity
+          Retrieval.
+          In: Proceedings of the 22nd ACM Conference on Information and Knowledge Management (CIKM’13). San Francisco,
+          CA, USA.
+          October 27 to November 1, 2013.
+        </li>
+        <li>Chunliang Lu, Wai Lam and Yingxiao Zhang.
+          Twitter User Modeling and Tweets Recommendation based on Wikipedia Concept Graph.
+          In: The AAAI 2012 Workshop on Intelligent Techniques For Web Personalization and Recommender Systems (ITWP
+          2012).
+          Toronto, Canada. 22 July, 2012.
+        </li>
+      </ol>
+    </article>
+
+    <article class="projects">
+      <h2>Projects</h2>
+
+      <h3>Research</h3>
+
+      <section>
+        <header>ThingsDB</header>
+
+        <p>
+          Connect the disconnect
+        </p>
+        <footer class="ref">
+          Learn more: <a href="https://thingsdb.org/" target="_blank">thingsdb.org</a>
+        </footer>
+      </section>
+
+      <h3>Startup</h3>
+
+      <section>
+        <header>Hyperlink</header>
+
+        <p>
+          A cartoon character who is commonly considered an alien feline creature.
+        </p>
+        <footer class="ref">
+          Learn more: <a href="https://hyperlinkapp.com/" target="_blank">hyperlinkapp.com</a>
+        </footer>
+      </section>
+
+    </article>
+
+    <article>
+      <h2>Experience</h2>
+
+      <section>
+        <header><span class="job">PD &amp; UI/UX @ Jisuanke.com</span><span
+          class="duration">(06/2015—Present)</span></header>
+
+        <p>
+          Responsibility included: Understanding rational and emotional demands of users; Outlining product
+          logic and prototype; Designing interactions and visual style; Crafting new features for upcoming
+          challenges; Maintaining usability of existing functionalities.
+        </p>
+        <footer class="ref">
+          Learn more: <a href="http://www.jisuanke.com/" target="_blank">jisuanke.com</a>
+        </footer>
+      </section>
+      <section>
+        <header><span class="job">Designer @ Shixian.com</span><span class="duration">(09/2014—05/2015)</span></header>
+
+        <p>
+          Designed visual identity. Started reworking product design since 03/2015.
+        </p>
+
+        <p>
+          Solely worked on UI/UX for 5 projects; provided consulting of UI/UX and product design for 4
+          projects; further engaged in development process for 1 project, which were initiated in Shixian
+          community.
+        </p>
+        <footer class="ref">
+          Learn more: <a href="http://shixian.com/" target="_blank">shixian.com</a>
+        </footer>
+      </section>
+    </article>
+
+
+    <div class="page-break page-start"></div>
+
+  </main>
+
+</div>
 </body>
 </html>

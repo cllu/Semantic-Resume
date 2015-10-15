@@ -1,0 +1,162 @@
+* {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased; }
+
+body {
+  font-size: 10pt;
+  margin: 0 auto; }
+
+strong {
+  font-weight: 400; }
+
+h1 {
+  font-size: 28pt;
+  margin: 0 0 6pt;
+  font-weight: 400;
+  color: #030303; }
+
+.avatar {
+  float: right;
+  width: 3.38cm;
+  height: 3.38cm;
+  margin: -1pt 0 0 0;
+  border-radius: 100cm; }
+
+a {
+  color: inherit;
+  text-decoration: none; }
+
+.contact {
+  font-weight: 300;
+  color: #444;
+  line-height: 1.35em;
+  display: block; }
+  .contact a {
+    display: inline-block; }
+  .contact span em {
+    font-style: normal;
+    width: 130px; }
+  .contact em {
+    font-style: normal;
+    display: inline-block;
+    width: 130px; }
+
+main {
+  padding-top: 1cm; }
+
+p {
+  line-height: 1.45em;
+  margin: 0; }
+
+.ref {
+  font-size: 9pt;
+  display: block;
+  margin: 5pt 0 5pt; }
+
+.page-break {
+  display: none; }
+
+.page-start {
+  display: none; }
+
+@media only screen and (min-width: 768px) {
+  body {
+    max-width: 13.4cm;
+    padding: 0 2.5cm 0;
+    zoom: 1.25; }
+
+  .grand.cont {
+    padding: 1.4cm 0; } }
+@media only screen and (max-width: 767px) {
+  body {
+    padding: 0 0cm 0; }
+
+  .grand.cont {
+    padding: 0.4cm 0; }
+
+  .avatar {
+    border: 0.8px solid #B4B4B4; } }
+/* ----------------------------------------------------------- */
+body {
+  font-family: 'Iowan Old Style', 'FF Meta Serif', 'Freight Text Pro', 'Palatino', Merriweather, Charter, Georgia, 'Times New Roman', 'Lantinghei SC', 'Hiragino Sans GB', 'Heiti SC', serif;
+  color: #444;
+  background: none; }
+
+article {
+  padding-bottom: 18pt; }
+  article h2 {
+    font-size: 18pt;
+    padding-top: 18pt;
+    margin: 0 0 13pt -10pt;
+    font-weight: 400;
+    color: #2B8CD2;
+    letter-spacing: 0.10rem;
+    text-transform: uppercase;
+    border-bottom: 0.8px solid #E5E5E5;
+    padding-bottom: 3pt; }
+  article h3 {
+    font-size: 10pt;
+    display: block;
+    margin: 13pt 0 13pt -10pt;
+    font-weight: 400;
+    color: #2B8CD2;
+    letter-spacing: 0.12rem;
+    text-transform: uppercase; }
+  article h2, article h3 {
+    font-family: 'Seravek', 'Seoge UI', 'Helvetica Neue', 'Helvetica', Verdana, Arial, 'Lantinghei SC', 'Hiragino Sans GB', 'Heiti SC', sans-serif; }
+  article header {
+    font-weight: 600;
+    font-size: 12pt;
+    margin: 13pt 0 5pt; }
+    article header .job {
+      box-sizing: border-box;
+      display: inline-block;
+      min-width: 7cm; }
+    article header .duration {
+      font-family: 'Seravek', 'Seoge UI', 'Helvetica Neue', 'Helvetica', Verdana, Arial, 'Lantinghei SC', 'Hiragino Sans GB', 'Heiti SC', sans-serif;
+      font-weight: 200;
+      color: #7A7A7A; }
+
+p {
+  font-weight: 300;
+  color: #030303; }
+  p a {
+    color: #2B8CD2; }
+
+.ref {
+  font-family: 'Seravek', 'Seoge UI', 'Helvetica Neue', 'Helvetica', Verdana, Arial, 'Lantinghei SC', 'Hiragino Sans GB', 'Heiti SC', sans-serif;
+  font-weight: 300;
+  color: #999; }
+
+/* ----------------------------------------------------------- */
+@media screen {
+  .avatar {
+    border: 0.8px solid #B4B4B4; } }
+@media print {
+  .page-break {
+    display: block;
+    page-break-before: always; }
+
+  .page-start {
+    display: block;
+    height: 1.4cm; }
+
+  body {
+    max-width: 14.1cm;
+    color: #030303; }
+
+  .avatar {
+    border: 0.5pt solid #B4B4B4; }
+
+  article h2, article h3 {
+    color: #55AAFF; }
+  article h2 {
+    border-bottom: 0.5pt solid #DDD; }
+  article header .duration, article .ref {
+    color: #999; }
+
+  p {
+    font-family: 'Iowan Old Style', 'FF Meta Serif', 'Freight Text Pro', 'Palatino', Merriweather, Charter, Georgia, 'Times New Roman', 'Lantinghei SC', 'Hiragino Sans GB', 'Heiti SC', serif;
+    color: #030303; } }
+
+/*# sourceMappingURL=resume.css.map */
