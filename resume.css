@@ -4,10 +4,13 @@
 
 body {
   font-size: 10pt;
-  margin: 0 auto; }
+  margin: 0 auto;
+  font-family: "Iowan Old Style", "FF Meta Serif", "Freight Text Pro", "Palatino", Merriweather, Charter, Georgia, "Times New Roman", "Lantinghei SC", "Hiragino Sans GB", "Heiti SC", serif;
+  color: #444;
+  background: none; }
 
 strong {
-  font-weight: 400; }
+  font-weight: 700; }
 
 h1 {
   font-size: 28pt;
@@ -76,18 +79,12 @@ p {
 
   .avatar {
     border: 0.8px solid #B4B4B4; } }
-/* ----------------------------------------------------------- */
-body {
-  font-family: 'Iowan Old Style', 'FF Meta Serif', 'Freight Text Pro', 'Palatino', Merriweather, Charter, Georgia, 'Times New Roman', 'Lantinghei SC', 'Hiragino Sans GB', 'Heiti SC', serif;
-  color: #444;
-  background: none; }
-
 article {
   padding-bottom: 18pt; }
   article h2 {
     font-size: 18pt;
     padding-top: 18pt;
-    margin: 0 0 13pt -10pt;
+    margin: 0 0 13pt 0;
     font-weight: 400;
     color: #2B8CD2;
     letter-spacing: 0.10rem;
@@ -97,13 +94,13 @@ article {
   article h3 {
     font-size: 10pt;
     display: block;
-    margin: 13pt 0 13pt -10pt;
+    margin: 13pt 0 13pt 0;
     font-weight: 400;
     color: #2B8CD2;
     letter-spacing: 0.12rem;
     text-transform: uppercase; }
   article h2, article h3 {
-    font-family: 'Seravek', 'Seoge UI', 'Helvetica Neue', 'Helvetica', Verdana, Arial, 'Lantinghei SC', 'Hiragino Sans GB', 'Heiti SC', sans-serif; }
+    font-family: "Seravek", "Seoge UI", "Helvetica Neue", "Helvetica", Verdana, Arial, "Lantinghei SC", "Hiragino Sans GB", "Heiti SC", sans-serif; }
   article header {
     font-weight: 600;
     font-size: 12pt;
@@ -113,7 +110,7 @@ article {
       display: inline-block;
       min-width: 7cm; }
     article header .duration {
-      font-family: 'Seravek', 'Seoge UI', 'Helvetica Neue', 'Helvetica', Verdana, Arial, 'Lantinghei SC', 'Hiragino Sans GB', 'Heiti SC', sans-serif;
+      font-family: "Seravek", "Seoge UI", "Helvetica Neue", "Helvetica", Verdana, Arial, "Lantinghei SC", "Hiragino Sans GB", "Heiti SC", sans-serif;
       font-weight: 200;
       color: #7A7A7A; }
 
@@ -124,7 +121,7 @@ p {
     color: #2B8CD2; }
 
 .ref {
-  font-family: 'Seravek', 'Seoge UI', 'Helvetica Neue', 'Helvetica', Verdana, Arial, 'Lantinghei SC', 'Hiragino Sans GB', 'Heiti SC', sans-serif;
+  font-family: "Seravek", "Seoge UI", "Helvetica Neue", "Helvetica", Verdana, Arial, "Lantinghei SC", "Hiragino Sans GB", "Heiti SC", sans-serif;
   font-weight: 300;
   color: #999; }
 
@@ -156,7 +153,9 @@ p {
     color: #999; }
 
   p {
-    font-family: 'Iowan Old Style', 'FF Meta Serif', 'Freight Text Pro', 'Palatino', Merriweather, Charter, Georgia, 'Times New Roman', 'Lantinghei SC', 'Hiragino Sans GB', 'Heiti SC', serif;
+    font-family: "Iowan Old Style", "FF Meta Serif", "Freight Text Pro", "Palatino", Merriweather, Charter, Georgia, "Times New Roman", "Lantinghei SC", "Hiragino Sans GB", "Heiti SC", serif;
     color: #030303; } }
+article ul, article ol {
+  padding-left: 20px; }
 
 /*# sourceMappingURL=resume.css.map */
