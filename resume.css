@@ -45,7 +45,7 @@ a {
     width: 130px; }
 
 main {
-  padding-top: 1cm; }
+  padding-top: 0.2cm; }
 
 p {
   line-height: 1.45em;
@@ -79,40 +79,38 @@ p {
 
   .avatar {
     border: 0.8px solid #B4B4B4; } }
-article {
-  padding-bottom: 18pt; }
-  article h2 {
-    font-size: 18pt;
-    padding-top: 18pt;
-    margin: 0 0 13pt 0;
-    font-weight: 400;
-    color: #2B8CD2;
-    letter-spacing: 0.10rem;
-    text-transform: uppercase;
-    border-bottom: 0.8px solid #E5E5E5;
-    padding-bottom: 3pt; }
-  article h3 {
-    font-size: 10pt;
-    display: block;
-    margin: 13pt 0 13pt 0;
-    font-weight: 400;
-    color: #2B8CD2;
-    letter-spacing: 0.12rem;
-    text-transform: uppercase; }
-  article h2, article h3 {
-    font-family: "Seravek", "Seoge UI", "Helvetica Neue", "Helvetica", Verdana, Arial, "Lantinghei SC", "Hiragino Sans GB", "Heiti SC", sans-serif; }
-  article header {
-    font-weight: 600;
-    font-size: 12pt;
-    margin: 13pt 0 5pt; }
-    article header .job {
-      box-sizing: border-box;
-      display: inline-block;
-      min-width: 7cm; }
-    article header .duration {
-      font-family: "Seravek", "Seoge UI", "Helvetica Neue", "Helvetica", Verdana, Arial, "Lantinghei SC", "Hiragino Sans GB", "Heiti SC", sans-serif;
-      font-weight: 200;
-      color: #7A7A7A; }
+article h2 {
+  font-size: 14pt;
+  padding-top: 18pt;
+  margin: 0 0 10pt 0;
+  font-weight: 400;
+  color: #2B8CD2;
+  letter-spacing: 0.10rem;
+  text-transform: uppercase;
+  border-bottom: 0.8px solid #E5E5E5;
+  padding-bottom: 3pt; }
+article h3 {
+  font-size: 10pt;
+  display: block;
+  margin: 13pt 0 13pt 0;
+  font-weight: 400;
+  color: #2B8CD2;
+  letter-spacing: 0.12rem;
+  text-transform: uppercase; }
+article h2, article h3 {
+  font-family: "Seravek", "Seoge UI", "Helvetica Neue", "Helvetica", Verdana, Arial, "Lantinghei SC", "Hiragino Sans GB", "Heiti SC", sans-serif; }
+article header {
+  font-weight: 600;
+  font-size: 10pt;
+  margin: 8pt 0 0; }
+  article header .job {
+    box-sizing: border-box;
+    display: inline-block;
+    min-width: 7cm; }
+  article header .duration {
+    font-family: "Seravek", "Seoge UI", "Helvetica Neue", "Helvetica", Verdana, Arial, "Lantinghei SC", "Hiragino Sans GB", "Heiti SC", sans-serif;
+    font-weight: 200;
+    color: #7A7A7A; }
 
 p {
   font-weight: 300;
@@ -156,6 +154,7 @@ p {
     font-family: "Iowan Old Style", "FF Meta Serif", "Freight Text Pro", "Palatino", Merriweather, Charter, Georgia, "Times New Roman", "Lantinghei SC", "Hiragino Sans GB", "Heiti SC", serif;
     color: #030303; } }
 article ul, article ol {
-  padding-left: 20px; }
+  padding-left: 20px;
+  margin: 7px 0; }
 
 /*# sourceMappingURL=resume.css.map */
