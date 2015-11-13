@@ -1,5 +1,10 @@
-$font-title: 'Seravek', 'Seoge UI', 'Helvetica Neue', 'Helvetica', Verdana, Arial, 'Lantinghei SC', 'Hiragino Sans GB', 'Heiti SC', sans-serif;
-$body-font: 'Iowan Old Style', 'FF Meta Serif', 'Freight Text Pro', 'Palatino', Merriweather, Charter, Georgia, 'Times New Roman', 'Lantinghei SC', 'Hiragino Sans GB', 'Heiti SC', serif;
+$font-title: 'Helvetica Neue', 'Helvetica', Verdana, Arial, 'Heiti SC', sans-serif;
+$body-font: 'Times New Roman', serif;
+$color-default: #444;
+$color-background: white;
+
+@import "normalize";
+@import "page";
 
 * {
   text-rendering: optimizeLegibility;
@@ -8,10 +13,9 @@ $body-font: 'Iowan Old Style', 'FF Meta Serif', 'Freight Text Pro', 'Palatino', 
 
 body {
   font-size: 10pt;
-  margin: 0 auto;
   font-family: $body-font;
+  margin: 0 auto;
   color: #444;
-  background: none;
 }
 
 strong {
@@ -19,18 +23,10 @@ strong {
 }
 
 h1 {
-  font-size: 28pt;
+  font-size: 18pt;
   margin: 0 0 6pt;
   font-weight: 400;
   color: #030303;
-}
-
-.avatar {
-  float: right;
-  width: 3.38cm;
-  height: 3.38cm;
-  margin: -1pt 0 0 0;
-  border-radius: 100cm;
 }
 
 a {
@@ -60,10 +56,6 @@ a {
   }
 }
 
-main {
-  padding-top: 0.2cm;
-}
-
 p {
   line-height: 1.45em;
   margin: 0;
@@ -75,47 +67,13 @@ p {
   margin: 5pt 0 5pt;
 }
 
-.page-break {
-  display: none;
-}
-
-.page-start {
-  display: none;
-}
-
-@media only screen and (min-width: 768px) {
-  body {
-    max-width: 13.4cm;
-    padding: 0 2.5cm 0;
-    zoom: 1.25;
-  }
-
-  .grand.cont {
-    padding: 1.4cm 0;
-  }
-}
-
-@media only screen and (max-width: 767px) {
-  body {
-    padding: 0 0cm 0;
-  }
-
-  .grand.cont {
-    padding: 0.4cm 0;
-  }
-
-  .avatar {
-    border: 0.8px solid #B4B4B4;
-  }
-}
-
-// articles like Education/Projects etc
-article {
+// section like Education/Projects etc
+section {
 
   h2 {
     font-size: 14pt;
     padding-top: 18pt;
-    margin: 0 0 10pt 0;
+    margin: 0 0 5pt 0;
     font-weight: 400;
     color: #2B8CD2;
     letter-spacing: 0.10rem;
@@ -138,7 +96,7 @@ article {
     font-family: $font-title;
   }
 
-  header {
+  summary {
     font-weight: 600;
     font-size: 10pt;
     margin: 8pt 0 0;
@@ -175,35 +133,9 @@ p {
 
 /* ----------------------------------------------------------- */
 
-@media screen {
-  .avatar {
-    border: 0.8px solid #B4B4B4;
-  }
-}
-
 @media print {
 
-  .page-break {
-    display: block;
-    page-break-before: always;
-  }
-
-  .page-start {
-    display: block;
-    height: 1.4cm;
-  }
-
-  body {
-    max-width: 14.1cm;
-    color: #030303;
-  }
-
-  .avatar {
-    border: 0.5pt solid #B4B4B4;
-  }
-
-  article {
-
+  section {
     h2, h3 {
       color: #55AAFF;
     }
@@ -212,7 +144,7 @@ p {
       border-bottom: 0.5pt solid #DDD;
     }
 
-    header .duration, .ref {
+    summary .duration, .ref {
       color: #999;
     }
   }
@@ -223,10 +155,13 @@ p {
   }
 }
 
-article {
+section {
   ul, ol {
     padding-left: 20px;
     margin: 7px 0;
   }
 }
 
+section.basic {
+  text-align: center;
+}

@@ -1,0 +1,582 @@
+/*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS and IE text size adjust after device orientation change,
+ *    without disabling user zoom.
+ */
+html {
+  font-family: sans-serif;
+  /* 1 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */ }
+
+/**
+ * Remove default margin.
+ */
+body {
+  margin: 0; }
+
+/* HTML5 display definitions
+   ========================================================================== */
+/**
+ * Correct `block` display not defined for any HTML5 element in IE 8/9.
+ * Correct `block` display not defined for `details` or `summary` in IE 10/11
+ * and Firefox.
+ * Correct `block` display not defined for `main` in IE 11.
+ */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block; }
+
+/**
+ * 1. Correct `inline-block` display not defined in IE 8/9.
+ * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
+ */
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  /* 1 */
+  vertical-align: baseline;
+  /* 2 */ }
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+/**
+ * Address `[hidden]` styling not present in IE 8/9/10.
+ * Hide the `template` element in IE 8/9/10/11, Safari, and Firefox < 22.
+ */
+[hidden],
+template {
+  display: none; }
+
+/* Links
+   ========================================================================== */
+/**
+ * Remove the gray background color from active links in IE 10.
+ */
+a {
+  background-color: transparent; }
+
+/**
+ * Improve readability of focused elements when they are also in an
+ * active/hover state.
+ */
+a:active,
+a:hover {
+  outline: 0; }
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * Address styling not present in IE 8/9/10/11, Safari, and Chrome.
+ */
+abbr[title] {
+  border-bottom: 1px dotted; }
+
+/**
+ * Address style set to `bolder` in Firefox 4+, Safari, and Chrome.
+ */
+b,
+strong {
+  font-weight: bold; }
+
+/**
+ * Address styling not present in Safari and Chrome.
+ */
+dfn {
+  font-style: italic; }
+
+/**
+ * Address variable `h1` font-size and margin within `section` and `article`
+ * contexts in Firefox 4+, Safari, and Chrome.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0; }
+
+/**
+ * Address styling not present in IE 8/9.
+ */
+mark {
+  background: #ff0;
+  color: #000; }
+
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+small {
+  font-size: 80%; }
+
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sup {
+  top: -0.5em; }
+
+sub {
+  bottom: -0.25em; }
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Remove border when inside `a` element in IE 8/9/10.
+ */
+img {
+  border: 0; }
+
+/**
+ * Correct overflow not hidden in IE 9/10/11.
+ */
+svg:not(:root) {
+  overflow: hidden; }
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * Address margin not present in IE 8/9 and Safari.
+ */
+figure {
+  margin: 1em 40px; }
+
+/**
+ * Address differences between Firefox and other browsers.
+ */
+hr {
+  box-sizing: content-box;
+  height: 0; }
+
+/**
+ * Contain overflow in all browsers.
+ */
+pre {
+  overflow: auto; }
+
+/**
+ * Address odd `em`-unit font size rendering in all browsers.
+ */
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em; }
+
+/* Forms
+   ========================================================================== */
+/**
+ * Known limitation: by default, Chrome and Safari on OS X allow very limited
+ * styling of `select`, unless a `border` property is set.
+ */
+/**
+ * 1. Correct color not being inherited.
+ *    Known issue: affects color of disabled elements.
+ * 2. Correct font properties not being inherited.
+ * 3. Address margins set differently in Firefox 4+, Safari, and Chrome.
+ */
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+  margin: 0;
+  /* 3 */ }
+
+/**
+ * Address `overflow` set to `hidden` in IE 8/9/10/11.
+ */
+button {
+  overflow: visible; }
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera.
+ * Correct `select` style inheritance in Firefox.
+ */
+button,
+select {
+  text-transform: none; }
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */ }
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+button[disabled],
+html input[disabled] {
+  cursor: default; }
+
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0; }
+
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+input {
+  line-height: normal; }
+
+/**
+ * It's recommended that you don't attempt to style these elements.
+ * Firefox's implementation doesn't respect box-sizing, padding, or width.
+ *
+ * 1. Address box sizing set to `content-box` in IE 8/9/10.
+ * 2. Remove excess padding in IE 8/9/10.
+ */
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+ * Fix the cursor style for Chrome's increment/decrement buttons. For certain
+ * `font-size` values of the `input`, it causes the cursor style of the
+ * decrement button to change from `default` to `text`.
+ */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto; }
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari and Chrome.
+ */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  box-sizing: content-box;
+  /* 2 */ }
+
+/**
+ * Remove inner padding and search cancel button in Safari and Chrome on OS X.
+ * Safari (but not Chrome) clips the cancel button when the search input has
+ * padding (and `textfield` appearance).
+ */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+/**
+ * Define consistent border, margin, and padding.
+ */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em; }
+
+/**
+ * 1. Correct `color` not being inherited in IE 8/9/10/11.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+legend {
+  border: 0;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+ * Remove default vertical scrollbar in IE 8/9/10/11.
+ */
+textarea {
+  overflow: auto; }
+
+/**
+ * Don't inherit the `font-weight` (applied by a rule above).
+ * NOTE: the default cannot safely be changed in Chrome and Safari on OS X.
+ */
+optgroup {
+  font-weight: bold; }
+
+/* Tables
+   ========================================================================== */
+/**
+ * Remove most spacing between table cells.
+ */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+td,
+th {
+  padding: 0; }
+
+/**
+ * Styling for the main element, including a .page-break element
+ */
+html, body {
+  margin: 0;
+  padding: 0;
+  /* Use a non-white background color to make the content areas stick out from the full page box */
+  background-color: #eee; }
+
+* {
+  /* Include the content box as well as padding and border for precise definitions */
+  box-sizing: border-box;
+  -moz-box-sizing: border-box; }
+
+/* Defines a class for manual page breaks via inserted .page-break element */
+div.page-break {
+  page-break-after: always;
+  border-bottom: 1px dashed #DDD;
+  margin: 1cm -2cm; }
+
+/* For top-level headings only */
+h1 {
+  /* Force page breaks after */ }
+
+/* For all headings */
+h1, h2, h3, h4, h5, h6 {
+  /* Avoid page breaks immediately */
+  page-break-after: avoid; }
+
+/* For all paragraph tags */
+p {
+  /* Reset the margin so that the text starts and ends at the expected marks */
+  margin: 0; }
+
+/* For adjacent paragraph tags */
+p + p {
+  /* Restore the spacing between the paragraphs */
+  margin-top: 0.5cm; }
+
+/* For links in the document */
+a {
+  /* Prevent colorization or decoration */
+  text-decoration: none;
+  color: black; }
+
+/* For tables in the document */
+table {
+  /* Avoid page breaks inside */
+  page-break-inside: avoid; }
+
+/* Use CSS Paged Media to switch from continuous documents to sheet-like documents with separate pages */
+@page {
+  /* You can only change the size, margins, orphans, widows and page breaks here */
+  /* Require that at least this many lines of a paragraph must be left at the bottom of a page */
+  orphans: 4;
+  /* Require that at least this many lines of a paragraph must be left at the top of a new page */
+  widows: 2; }
+/* When the document is actually printed */
+@media print {
+  html, body {
+    /* Reset the document's background color */
+    background-color: #fff; }
+
+  div.page-break {
+    border: none;
+    margin: 0; }
+
+  main {
+    /* Reset all page styles that have been for better screen appearance only */
+    /* Break cascading by using the !important rule */
+    /* These resets are absolute must-haves for the print styles and the specificity may be higher elsewhere */
+    width: initial !important;
+    min-height: initial !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: initial !important;
+    border-radius: initial !important;
+    background: initial !important;
+    box-shadow: initial !important;
+    /* Force page breaks after each .page element of the document */
+    page-break-after: always; } }
+@media only screen and (min-width: 25cm) {
+  main {
+    /* Divide single pages with some space and center all pages horizontally */
+    margin: 1cm auto;
+    /* Define a white paper background that sticks out from the darker overall background */
+    background: #fff;
+    /* Show a drop shadow beneath each page */
+    box-shadow: 0 4px 5px rgba(75, 75, 75, 0.2);
+    /* Reflect the paper width in the screen rendering (must match size from @page rule) */
+    width: 21cm;
+    /* Reflect the paper height in the screen rendering (must match size from @page rule) */
+    min-height: 29.7cm;
+    /* Margin per single side of the page */
+    padding: 2cm; } }
+@media only screen and (max-width: 25cm) {
+  html, body {
+    background-color: white; }
+
+  main {
+    background: white;
+    margin: 1cm; }
+
+  div.page-break {
+    display: none; } }
+/* Use CSS Paged Media to switch from continuous documents to sheet-like documents with separate pages */
+@page {
+  /* You can only change the size, margins, orphans, widows and page breaks here */
+  /* Paper size and page orientation */
+  size: A4 portrait;
+  /* Margin per single side of the page */
+  /* only works if you set Margin to Default in the print dialog */
+  margin-left: 2cm;
+  margin-top: 2cm;
+  margin-right: 2cm;
+  margin-bottom: 2cm; }
+* {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased; }
+
+body {
+  font-size: 10pt;
+  font-family: "Times New Roman", serif;
+  margin: 0 auto;
+  color: #444; }
+
+strong {
+  font-weight: 700; }
+
+h1 {
+  font-size: 18pt;
+  margin: 0 0 6pt;
+  font-weight: 400;
+  color: #030303; }
+
+a {
+  color: inherit;
+  text-decoration: none; }
+
+.contact {
+  font-weight: 300;
+  color: #444;
+  line-height: 1.35em;
+  display: block; }
+  .contact a {
+    display: inline-block; }
+  .contact span em {
+    font-style: normal;
+    width: 130px; }
+  .contact em {
+    font-style: normal;
+    display: inline-block;
+    width: 130px; }
+
+p {
+  line-height: 1.45em;
+  margin: 0; }
+
+.ref {
+  font-size: 9pt;
+  display: block;
+  margin: 5pt 0 5pt; }
+
+section h2 {
+  font-size: 14pt;
+  padding-top: 18pt;
+  margin: 0 0 5pt 0;
+  font-weight: 400;
+  color: #2B8CD2;
+  letter-spacing: 0.10rem;
+  text-transform: uppercase;
+  border-bottom: 0.8px solid #E5E5E5;
+  padding-bottom: 3pt; }
+section h3 {
+  font-size: 10pt;
+  display: block;
+  margin: 13pt 0 13pt 0;
+  font-weight: 400;
+  color: #2B8CD2;
+  letter-spacing: 0.12rem;
+  text-transform: uppercase; }
+section h2, section h3 {
+  font-family: "Helvetica Neue", "Helvetica", Verdana, Arial, "Heiti SC", sans-serif; }
+section summary {
+  font-weight: 600;
+  font-size: 10pt;
+  margin: 8pt 0 0; }
+  section summary .job {
+    box-sizing: border-box;
+    display: inline-block;
+    min-width: 7cm; }
+  section summary .duration {
+    font-family: "Helvetica Neue", "Helvetica", Verdana, Arial, "Heiti SC", sans-serif;
+    font-weight: 200;
+    color: #7A7A7A; }
+
+p {
+  font-weight: 300;
+  color: #030303; }
+  p a {
+    color: #2B8CD2; }
+
+.ref {
+  font-family: "Helvetica Neue", "Helvetica", Verdana, Arial, "Heiti SC", sans-serif;
+  font-weight: 300;
+  color: #999; }
+
+/* ----------------------------------------------------------- */
+@media print {
+  section h2, section h3 {
+    color: #55AAFF; }
+  section h2 {
+    border-bottom: 0.5pt solid #DDD; }
+  section summary .duration, section .ref {
+    color: #999; }
+
+  p {
+    font-family: "Times New Roman", serif;
+    color: #030303; } }
+section ul, section ol {
+  padding-left: 20px;
+  margin: 7px 0; }
+
+section.basic {
+  text-align: center; }
+
+/*# sourceMappingURL=resume.css.map */
