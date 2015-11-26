@@ -23,7 +23,7 @@ strong {
 }
 
 h1 {
-  font-size: 18pt;
+  font-size: 16pt;
   margin: 0 0 6pt;
   font-weight: 400;
   color: #030303;
@@ -71,9 +71,9 @@ p {
 section {
 
   h2 {
-    font-size: 14pt;
-    padding-top: 18pt;
-    margin: 0 0 5pt 0;
+    font-size: 11pt;
+    padding-top: 9pt;
+    margin: 0 0 2pt 0;
     font-weight: 400;
     color: #2B8CD2;
     letter-spacing: 0.10rem;
@@ -99,7 +99,7 @@ section {
   summary {
     font-weight: 600;
     font-size: 10pt;
-    margin: 8pt 0 0;
+    margin: 0 0 0;
 
     .job {
       box-sizing: border-box;
@@ -153,6 +153,10 @@ p {
     font-family: $body-font;
     color: #030303;
   }
+
+  .web-only {
+    display: none;
+  }
 }
 
 section {
@@ -165,3 +169,10 @@ section {
 section.basic {
   text-align: center;
 }
+
+section.education {
+  .duration {
+    float: right;
+  }
+}
+

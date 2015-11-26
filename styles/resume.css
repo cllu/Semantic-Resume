@@ -465,10 +465,7 @@ table {
   size: A4 portrait;
   /* Margin per single side of the page */
   /* only works if you set Margin to Default in the print dialog */
-  margin-left: 2cm;
-  margin-top: 2cm;
-  margin-right: 2cm;
-  margin-bottom: 2cm; }
+  margin: 1.5cm 1.8cm; }
 * {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased; }
@@ -483,7 +480,7 @@ strong {
   font-weight: 700; }
 
 h1 {
-  font-size: 18pt;
+  font-size: 16pt;
   margin: 0 0 6pt;
   font-weight: 400;
   color: #030303; }
@@ -517,9 +514,9 @@ p {
   margin: 5pt 0 5pt; }
 
 section h2 {
-  font-size: 14pt;
-  padding-top: 18pt;
-  margin: 0 0 5pt 0;
+  font-size: 11pt;
+  padding-top: 9pt;
+  margin: 0 0 2pt 0;
   font-weight: 400;
   color: #2B8CD2;
   letter-spacing: 0.10rem;
@@ -539,7 +536,7 @@ section h2, section h3 {
 section summary {
   font-weight: 600;
   font-size: 10pt;
-  margin: 8pt 0 0; }
+  margin: 0 0 0; }
   section summary .job {
     box-sizing: border-box;
     display: inline-block;
@@ -571,12 +568,18 @@ p {
 
   p {
     font-family: "Times New Roman", serif;
-    color: #030303; } }
+    color: #030303; }
+
+  .web-only {
+    display: none; } }
 section ul, section ol {
   padding-left: 20px;
   margin: 7px 0; }
 
 section.basic {
   text-align: center; }
+
+section.education .duration {
+  float: right; }
 
 /*# sourceMappingURL=resume.css.map */
