@@ -32,6 +32,7 @@ h1 {
 a {
   color: inherit;
   text-decoration: none;
+  border-bottom: 1px dashed #ddd;
 }
 
 .contact {
@@ -107,7 +108,7 @@ section {
       min-width: 7cm;
     }
 
-    .duration {
+    time {
       font-family: $font-title;
       font-weight: 200;
       color: #7A7A7A;
@@ -135,6 +136,11 @@ p {
 
 @media print {
 
+  // no underline for the links
+  a {
+    border-bottom: none;
+  }
+
   section {
     h2, h3 {
       color: #55AAFF;
@@ -142,10 +148,6 @@ p {
 
     h2 {
       border-bottom: 0.5pt solid #DDD;
-    }
-
-    summary .duration, .ref {
-      color: #999;
     }
   }
 
@@ -171,8 +173,7 @@ section.basic {
 }
 
 section.education {
-  .duration {
+  time {
     float: right;
   }
 }
-

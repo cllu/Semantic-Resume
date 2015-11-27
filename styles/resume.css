@@ -487,7 +487,8 @@ h1 {
 
 a {
   color: inherit;
-  text-decoration: none; }
+  text-decoration: none;
+  border-bottom: 1px dashed #ddd; }
 
 .contact {
   font-weight: 300;
@@ -541,7 +542,7 @@ section summary {
     box-sizing: border-box;
     display: inline-block;
     min-width: 7cm; }
-  section summary .duration {
+  section summary time {
     font-family: "Helvetica Neue", "Helvetica", Verdana, Arial, "Heiti SC", sans-serif;
     font-weight: 200;
     color: #7A7A7A; }
@@ -559,12 +560,13 @@ p {
 
 /* ----------------------------------------------------------- */
 @media print {
+  a {
+    border-bottom: none; }
+
   section h2, section h3 {
     color: #55AAFF; }
   section h2 {
     border-bottom: 0.5pt solid #DDD; }
-  section summary .duration, section .ref {
-    color: #999; }
 
   p {
     font-family: "Times New Roman", serif;
@@ -579,7 +581,7 @@ section ul, section ol {
 section.basic {
   text-align: center; }
 
-section.education .duration {
+section.education time {
   float: right; }
 
 /*# sourceMappingURL=resume.css.map */
