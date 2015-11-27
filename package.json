@@ -1,0 +1,26 @@
+{
+  "name": "resume",
+  "version": "1.0.0",
+  "description": "Semantic HTML resume",
+  "author": "Chunliang Lyu",
+  "license": "MIT",
+  "homepage": "https://bitbucket.org/cllu/resume#readme",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/cllu/resume.git"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "babel": "^6.1.18",
+    "babel-core": "^6.2.1",
+    "babel-preset-es2015": "^6.1.18",
+    "browser-sync": "^2.10.0",
+    "gulp": "^3.9.0",
+    "gulp-livereload": "^3.8.1",
+    "gulp-sass": "^2.1.0"
+  }
+}

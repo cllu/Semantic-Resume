@@ -15,3 +15,11 @@ Page style from [Sheets-of-Paper](https://github.com/delight-im/HTML-Sheets-of-P
 - the `<main>` element is marked as the `http://schema.org/Person`
   - the `h1` element is marked as the `name` property
   - the `sameAs` property can be specified for social profile links like GitHub account
+
+## Developing
+
+Use `npm install` to install related node modules, use `gulp` to start developing with a live reload server.
+
+## License
+
+MIT License

@@ -1,3 +1,8 @@
+node_modules/
+
+# build files
+dist
+
 .sass-cache
 
 *.css.map
