@@ -1,27 +1,33 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8"/>
+  <meta name="author" content="Chunliang Lyu">
   <title>Chunliang Lyu — Resume</title>
   <link rel="shortcut icon" href="/favicon.ico"/>
   <link rel="stylesheet" type="text/css" href="styles/resume.css">
+  <script src="scripts/resume.js"></script>
 </head>
 <body>
 
-<main class="page">
+<main class="page" itemscope itemtype="http://schema.org/Person">
 
   <section class="basic">
-    <h1>Chunliang Lyu</h1>
+    <h1 itemprop="name">Chunliang Lyu</h1>
+    <h1 itemprop="alternateName" style="display: none">Chunliang Lu</h1>
 
     <div class="contact">
-      <a href="https://chunlianglyu.com/" target="_blank">https://chunlianglyu.com</a>
+      <a href="https://chunlianglyu.com/" target="_blank" itemprop="url">https://chunlianglyu.com</a>
     </div>
     <div class="contact">
-      <a href="mailto:hi@chunlianglyu.com" target="_blank">hi@chunlianglyu.com</a>
+      <a href="mailto:hi@chunlianglyu.com" target="_blank" itemprop="email">hi@chunlianglyu.com</a>
     </div>
-    <div class="contact">
+    <div class="contact" itemprop="telephone">
       +852-54943678
     </div>
+
+    <i class="fa github"></i><a href="https://github.com/cllu" itemprop="sameAs">github.com/cllu</a>
+    <i class="fa twitter"></i><a href="https://twitter.com/chunlianglyu" itemprop="sameAs">@chunlianglyu</a>
   </section>
 
   <section class="education">
@@ -29,7 +35,10 @@
 
     <details open>
       <summary>
-        The Chinese University of Hong Kong, Ph.D. in Text Mining
+        <span itemprop="alumniOf" itemscope itemtype="http://schema.org/EducationalOrganization">
+          <span itemprop="name">The Chinese University of Hong Kong</span>
+        </span>
+          , Ph.D. in Text Mining
         <span class="duration">(08/2011 - 01/2016)</span>
       </summary>
       <ul>
@@ -41,7 +50,10 @@
 
     <details>
       <summary>
-        National Taiwan University of Science and Technology, Visiting Student
+        <span itemprop="alumniOf" itemscope itemtype="http://schema.org/EducationalOrganization">
+          <span itemprop="name">National Taiwan University of Science and Technology</span>
+        </span>
+        , Visiting Student
         <span class="duration">(01/2011 - 06/2011)</span>
       </summary>
       <ul>
@@ -52,7 +64,10 @@
     </details>
     <details>
       <summary>
-        Beijing Institute of Technology, B.S., Information Engineering, GPA 3.9
+        <span itemprop="alumniOf" itemscope itemtype="http://schema.org/EducationalOrganization">
+          <span itemprop="name">Beijing Institute of Technology</span>
+        </span>
+        , B.S., Information Engineering, GPA 3.9
         <span class="duration">(09/2007 - 06/2011)</span>
       </summary>
     </details>
@@ -62,7 +77,8 @@
     <h2>Projects</h2>
 
     <details open>
-      <summary>Entity Discovery and Retrieval System, Principle Researcher
+      <summary>
+        Entity Discovery and Retrieval System, Principle Researcher
         <span class="duration">2012-2015</span>
       </summary>
       <ul>
@@ -80,7 +96,11 @@
     </details>
 
     <details open>
-      <summary>Hyperlink, Co-founder
+      <summary>
+        <span itemprop="worksFor" itemscope itemtype="http://schema.org/Organization">
+          <span itemprop="name">HyperLab</span>
+        </span>
+        , Co-founder
         <span class="duration">2014-now</span>
       </summary>
 
@@ -92,8 +112,8 @@
         <li>Integrated 13 online services, including cloud storage services like Dropbox, social services like Facebook,
           note keeping services like Evernote.
         </li>
-        <li>Designed and implemented the overall system,
-          including Postgres as the database, ElasticSearch as indexing and searching,
+        <li>Designed and implemented the overall system in Python 3,
+          including PostgreSQL as the database, ElasticSearch as indexing and searching, Celery as task queue.
           AngularJS as the frontend framework.
           The whole system can handle tens of thousands of concurrent requests per second.
         </li>
@@ -103,7 +123,8 @@
     </details>
 
     <details open>
-      <summary>SwitchPal, Project Coordinator
+      <summary>
+        SwitchPal, Project Coordinator
         <span class="duration">2015</span>
       </summary>
       <ul>
@@ -119,7 +140,8 @@
     </details>
 
     <details open>
-      <summary>Twitter Recommendation System, Principle Researcher
+      <summary>
+        Twitter Recommendation System, Principle Researcher
         <span class="duration">2012</span>
       </summary>
       <ul>
@@ -210,6 +232,13 @@
         2012.
       </li>
     </ol>
+  </section>
+
+  <section class="articles">
+    <h2>Articles</h2>
+    <ul>
+      <li><a href="https://chunlianglyu.com/article/2014/11/26/developing-chrome-extension-with-angularjs/">Developing Chrome Extension with AngularJS</a></li>
+    </ul>
   </section>
 
 </main>
