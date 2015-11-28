@@ -8,6 +8,28 @@
   <link rel="stylesheet" type="text/css" href="styles/resume.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <script src="scripts/resume.js"></script>
+
+  <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+    "@type": "ListItem",
+    "position": 1,
+    "item": {
+      "@id": "https://chunlianglyu.com/",
+      "name": "Home"
+    }
+  },{
+    "@type": "ListItem",
+    "position": 2,
+    "item": {
+      "@id": "https://chunlianglyu.com/resume/",
+      "name": "Resume"
+    }
+  }]
+}
+</script>
 </head>
 <body>
 
@@ -15,11 +37,13 @@
 
   <section class="basic">
     <h1 itemprop="name">Chunliang Lyu</h1>
-    <h1 itemprop="alternateName" style="display: none">Chunliang Lu</h1>
+    <meta itemprop="alternateName" content="Chunliang Lu">
 
     <div class="contact">
       <a href="https://chunlianglyu.com/" target="_blank" itemprop="url">https://chunlianglyu.com</a>
     </div>
+
+    <!-- contact information -->
     <div class="contact">
       <a href="mailto:hi@chunlianglyu.com" target="_blank" itemprop="email">hi@chunlianglyu.com</a>
     </div>
@@ -205,7 +229,11 @@
       </li>
       <li>Teaching Assistant for four undergraduate and master engineering courses at CUHK, 2012-2015</li>
       <li>
-        Volunteer service for the Charles K Kao Foundation for Alzheimer’s Disease, 2011
+        Volunteer for the
+        <span itemprop="worksFor" itemscope itemtype="http://schema.org/Organization">
+          <span itemprop="name">Charles K Kao Foundation for Alzheimer’s Disease</span>,
+        </span>
+        2011
       </li>
       <li>
         Organizer of the 6th Information Security and Countermeasures Contest, 2010
@@ -228,6 +256,7 @@
           Processing(ACL)</em>.
         <span itemprop="datePublished">2015</span>.
         <span class="web-only">[<a itemprop="url" href="https://chunlianglyu.com/docs/acl15.pdf">PDF</a>]</span>
+        <meta itemprop="image" content="http://placehold.it/160x90">
       </li>
       <li itemscope itemtype="http://schema.org/ScholarlyArticle">
         <span itemprop="author">Lidong Bing</span>, <span itemprop="author">Wai Lam</span>, <span itemprop="author">Shoaib Jameel</span>, and <strong itemprop="author">Chunliang Lu</strong>.
@@ -237,6 +266,7 @@
           Conference on Intelligent Text Processing and Computational Linguistics(CICLing)</em>.
         <span itemprop="datePublished">2014</span>.
         <span class="web-only">[<a itemprop="url" href="https://chunlianglyu.com/docs/cicling14.pdf">PDF</a>]</span>
+        <meta itemprop="image" content="http://placehold.it/160x90">
       </li>
       <li itemscope itemtype="http://schema.org/ScholarlyArticle">
         <strong itemprop="author">Chunliang Lu</strong>, <span itemprop="author">Lidong Bing</span>, <span itemprop="author">Wai Lam</span>, <span itemprop="author">Ki Chan</span> and <span itemprop="author">Yuan Gu</span>.
@@ -244,6 +274,7 @@
         <em itemprop="isPartOf" itemscope itemtype="http://schema.org/Periodical">International Journal of Computational Linguistics and Applications (IJCLA)</em>.
         <span itemprop="datePublished">2013</span>.
         <span class="web-only">[<a itemprop="url" href="https://chunlianglyu.com/docs/ijcla13.pdf">PDF</a>]</span>
+        <meta itemprop="image" content="http://placehold.it/160x90">
       </li>
       <li itemscope itemtype="http://schema.org/ScholarlyArticle">
         <strong itemprop="author">Chunliang Lu</strong>, <span itemprop="author">Lidong Bing</span>, and <span itemprop="author">Wai Lam</span>.
@@ -251,6 +282,7 @@
         In: <em itemprop="isPartOf" itemscope itemtype="http://schema.org/Book">Proceedings of the 22nd ACM Conference on Information and Knowledge Management (CIKM)</em>.
         <span itemprop="datePublished">2013</span>.
         <span class="web-only">[<a itemprop="url" href="https://chunlianglyu.com/docs/cikm13.pdf">PDF</a>]</span>
+        <meta itemprop="image" content="http://placehold.it/160x90">
       </li>
       <li itemscope itemtype="http://schema.org/ScholarlyArticle">
         <strong itemprop="author">Chunliang Lu</strong>, <span itemprop="author">Wai Lam</span> and <span itemprop="author">Yingxiao Zhang</span>.
@@ -259,6 +291,7 @@
           (ITWP)</em>.
         <span itemprop="datePublished">2012</span>.
         <span class="web-only">[<a itemprop="url" href="https://chunlianglyu.com/docs/itwp12.pdf">PDF</a>]</span>
+        <meta itemprop="image" content="http://placehold.it/160x90">
       </li>
     </ol>
   </section>
@@ -270,6 +303,7 @@
         <a href="https://chunlianglyu.com/article/2014/11/26/developing-chrome-extension-with-angularjs/">
           <span itemprop="headline">Developing Chrome Extension with AngularJS</span> - <time itemprop="datePublished">Nov 26, 2014</time>
         </a>
+        <meta itemprop="image" content="http://placehold.it/160x90">
       </li>
     </ul>
   </section>
