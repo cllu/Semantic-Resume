@@ -4,7 +4,7 @@ A simple HTML resume with semantic markups.
 
 ## Get Started
 
-After downloading/clonig the repository, open the index.html in your browser. Modify the file to get your resume.
+After downloading/cloning the repository, open the index.html in your browser. Modify the file to get your resume.
 
 To export to PDF, try to Print using Google Chrome and then choose "Save as PDF" as the Destination.
 
@@ -41,6 +41,7 @@ See http://schema.org/Person for detailed documentations.
 
 ## Credits
 
+- [normalize.css](https://github.com/necolas/normalize.css)
 - Page style from [Sheets-of-Paper](https://github.com/delight-im/HTML-Sheets-of-Paper).
 
 ## License

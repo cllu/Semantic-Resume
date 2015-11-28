@@ -14,16 +14,16 @@ gulp.task('styles', () => {
 gulp.task('scripts', () => {
   gulp.src('./scripts/*.js')
     .pipe(gulp.dest('./dist/scripts/'))
-    .pipe(() => browserSync.reload());
+    .pipe(browserSync.stream());
 });
 
 gulp.task('html', () => {
   gulp.src('index.html')
     .pipe(gulp.dest('./dist/'))
-    .pipe(() => browserSync.reload());
+    .pipe(browserSync.stream());
 });
 
-gulp.task('default', ['styles'], () => {
+gulp.task('default', ['styles', 'scripts', 'html'], () => {
 
   browserSync.init({
     server: "./dist/"
@@ -31,7 +31,7 @@ gulp.task('default', ['styles'], () => {
 
   gulp.watch('index.html', ['html']);
   gulp.watch('./scripts/*.js', ['scripts']);
-  gulp.watch('./styles/*.scss', ['sass'])
+  gulp.watch('./styles/*.scss', ['styles'])
    .on('change', (e) => { 
      console.log(`File ${e.path} was ${e.type}, running Sass task...`); 
    });

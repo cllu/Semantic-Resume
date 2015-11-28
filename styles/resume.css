@@ -356,56 +356,20 @@ th {
 /**
  * Styling for the main element, including a .page-break element
  */
-html, body {
-  margin: 0;
-  padding: 0;
-  /* Use a non-white background color to make the content areas stick out from the full page box */
-  background-color: #eee; }
-
-* {
-  /* Include the content box as well as padding and border for precise definitions */
-  box-sizing: border-box;
-  -moz-box-sizing: border-box; }
-
 /* Defines a class for manual page breaks via inserted .page-break element */
 div.page-break {
   page-break-after: always;
   border-bottom: 1px dashed #DDD;
   margin: 1cm -2cm; }
 
-/* For top-level headings only */
-h1 {
-  /* Force page breaks after */ }
-
-/* For all headings */
-h1, h2, h3, h4, h5, h6 {
-  /* Avoid page breaks immediately */
-  page-break-after: avoid; }
-
-/* For all paragraph tags */
-p {
-  /* Reset the margin so that the text starts and ends at the expected marks */
-  margin: 0; }
-
-/* For adjacent paragraph tags */
-p + p {
-  /* Restore the spacing between the paragraphs */
-  margin-top: 0.5cm; }
-
-/* For links in the document */
-a {
-  /* Prevent colorization or decoration */
-  text-decoration: none;
-  color: black; }
-
-/* For tables in the document */
-table {
-  /* Avoid page breaks inside */
-  page-break-inside: avoid; }
-
 /* Use CSS Paged Media to switch from continuous documents to sheet-like documents with separate pages */
 @page {
   /* You can only change the size, margins, orphans, widows and page breaks here */
+  /* Paper size and page orientation */
+  size: A4 portrait;
+  /* Margin per single side of the page */
+  /* only works if you set Margin to Default in the print dialog */
+  margin: 1.5cm 1.8cm;
   /* Require that at least this many lines of a paragraph must be left at the bottom of a page */
   orphans: 4;
   /* Require that at least this many lines of a paragraph must be left at the top of a new page */
@@ -458,15 +422,10 @@ table {
 
   div.page-break {
     display: none; } }
-/* Use CSS Paged Media to switch from continuous documents to sheet-like documents with separate pages */
-@page {
-  /* You can only change the size, margins, orphans, widows and page breaks here */
-  /* Paper size and page orientation */
-  size: A4 portrait;
-  /* Margin per single side of the page */
-  /* only works if you set Margin to Default in the print dialog */
-  margin: 1.5cm 1.8cm; }
 * {
+  /* Include the content box as well as padding and border for precise definitions */
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased; }
 
@@ -475,6 +434,36 @@ body {
   font-family: "Times New Roman", serif;
   margin: 0 auto;
   color: #444; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  /* Use a non-white background color to make the content areas stick out from the full page box */
+  background-color: #eee; }
+
+/* For top-level headings only */
+h1 {
+  /* Force page breaks after */ }
+
+/* For all headings */
+h1, h2, h3, h4, h5, h6 {
+  /* Avoid page breaks immediately */
+  page-break-after: avoid; }
+
+/* For all paragraph tags */
+p {
+  /* Reset the margin so that the text starts and ends at the expected marks */
+  margin: 0; }
+
+/* For adjacent paragraph tags */
+p + p {
+  /* Restore the spacing between the paragraphs */
+  margin-top: 0.5cm; }
+
+/* For tables in the document */
+table {
+  /* Avoid page breaks inside */
+  page-break-inside: avoid; }
 
 strong {
   font-weight: 700; }
@@ -485,8 +474,9 @@ h1 {
   font-weight: 400;
   color: #030303; }
 
+/* For links in the document */
 a {
-  color: inherit;
+  color: black;
   text-decoration: none;
   border-bottom: 1px dashed #ddd; }
 

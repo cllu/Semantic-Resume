@@ -1,12 +1,19 @@
+/* Variables
+   ========================================================================== */
 $font-title: 'Helvetica Neue', 'Helvetica', Verdana, Arial, 'Heiti SC', sans-serif;
 $body-font: 'Times New Roman', serif;
 $color-default: #444;
-$color-background: white;
+$background-color: #EEEEEE;
 
 @import "normalize";
 @import "page";
 
+/* Global styles
+   ========================================================================== */
 * {
+  /* Include the content box as well as padding and border for precise definitions */
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 }
@@ -16,6 +23,45 @@ body {
   font-family: $body-font;
   margin: 0 auto;
   color: #444;
+
+  /* Use a non-white background color to make the content areas stick out from the full page box */
+  background-color: $background-color;
+}
+
+/* For all headings */
+h1, h2, h3, h4, h5, h6 {
+  /* Avoid page breaks immediately */
+  page-break-after: avoid;
+}
+
+/* For all paragraph tags */
+p {
+  /* Reset the margin so that the text starts and ends at the expected marks */
+  margin: 0;
+  line-height: 1.45em;
+  font-weight: 300;
+  color: #030303;
+
+  a {
+    color: #2B8CD2;
+  }
+}
+
+/* For adjacent paragraph tags */
+p + p {
+  /* Restore the spacing between the paragraphs */
+  margin-top: 0.5cm;
+}
+
+/* For tables in the document */
+table {
+  /* Avoid page breaks inside */
+  page-break-inside: avoid;
+}
+
+ul, ol {
+  padding-left: 20px;
+  margin: 7px 0;
 }
 
 strong {
@@ -29,8 +75,10 @@ h1 {
   color: #030303;
 }
 
+/* For links in the document */
 a {
-  color: inherit;
+  color: black;
+  // use a dashed underline for decoration
   text-decoration: none;
   border-bottom: 1px dashed #ddd;
 }
@@ -57,18 +105,17 @@ a {
   }
 }
 
-p {
-  line-height: 1.45em;
-  margin: 0;
-}
-
 .ref {
   font-size: 9pt;
   display: block;
   margin: 5pt 0 5pt;
+  font-family: $font-title;
+  font-weight: 300;
+  color: #999;
 }
 
-// section like Education/Projects etc
+/* Sections
+   ========================================================================== */
 section {
 
   h2 {
@@ -83,17 +130,7 @@ section {
     padding-bottom: 3pt;
   }
 
-  h3 {
-    font-size: 10pt;
-    display: block;
-    margin: 13pt 0 13pt 0;
-    font-weight: 400;
-    color: #2B8CD2;
-    letter-spacing: 0.12rem;
-    text-transform: uppercase;
-  }
-
-  h2, h3 {
+  h2 {
     font-family: $font-title;
   }
 
@@ -115,25 +152,24 @@ section {
     }
   }
 
-}
+  &.basic {
+    text-align: center;
+  }
 
-p {
-  font-weight: 300;
-  color: #030303;
-
-  a {
-    color: #2B8CD2;
+  &.education {
+    time {
+      float: right;
+    }
   }
 }
 
-.ref {
-  font-family: $font-title;
-  font-weight: 300;
-  color: #999;
-}
+/* Print Styles
+   ========================================================================== */
 
-/* ----------------------------------------------------------- */
-
+/**
+ * - Adjust styles for printing, like color
+ * - Hide elements with CSS class .web-only
+ */
 @media print {
 
   // no underline for the links
@@ -161,19 +197,3 @@ p {
   }
 }
 
-section {
-  ul, ol {
-    padding-left: 20px;
-    margin: 7px 0;
-  }
-}
-
-section.basic {
-  text-align: center;
-}
-
-section.education {
-  time {
-    float: right;
-  }
-}
