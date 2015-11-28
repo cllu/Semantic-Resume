@@ -18,6 +18,11 @@ $background-color: #EEEEEE;
   -webkit-font-smoothing: antialiased;
 }
 
+// remove the ugly blue outline when focused on some elements, such as the <summary> tag
+*:focus {
+  outline:0 !important;
+}
+
 body {
   font-size: 10pt;
   font-family: $body-font;
@@ -108,7 +113,8 @@ a {
 .ref {
   font-size: 9pt;
   display: block;
-  margin: 5pt 0 5pt;
+  float: right;
+  margin: -7px 0 5pt;
   font-family: $font-title;
   font-weight: 300;
   color: #999;
@@ -135,6 +141,7 @@ section {
   }
 
   summary {
+    clear: both;
     font-weight: 600;
     font-size: 10pt;
     margin: 0 0 0;

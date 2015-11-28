@@ -20,9 +20,10 @@ div.page-break {
   margin: 1.5cm 1.8cm;
 
   /* Require that at least this many lines of a paragraph must be left at the bottom of a page */
-  orphans: 4;
+  //orphans: 4;
+
   /* Require that at least this many lines of a paragraph must be left at the top of a new page */
-  widows: 2;
+  //widows: 2;
 }
 
 /* When the document is actually printed */
