@@ -126,6 +126,7 @@ section {
 
   h2 {
     font-size: 11pt;
+    font-family: $font-title;
     padding-top: 9pt;
     margin: 0 0 2pt 0;
     font-weight: 400;
@@ -134,10 +135,14 @@ section {
     text-transform: uppercase;
     border-bottom: 0.8px solid #E5E5E5;
     padding-bottom: 3pt;
-  }
-
-  h2 {
-    font-family: $font-title;
+    
+    // see more
+    a {
+      font-size: 9px;
+      float: right;
+      text-transform: lowercase;
+      color: #555; 
+    }
   }
 
   summary {
@@ -170,6 +175,10 @@ section {
   }
 }
 
+.hide {
+  display: none;
+}
+
 /* Print Styles
    ========================================================================== */
 
@@ -191,6 +200,9 @@ section {
 
     h2 {
       border-bottom: 0.5pt solid #DDD;
+      a {
+        display: none;
+      }
     }
   }
 
