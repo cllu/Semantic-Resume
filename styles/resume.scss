@@ -120,6 +120,10 @@ a {
   color: #999;
 }
 
+main {
+  position: relative;
+}
+
 /* Sections
    ========================================================================== */
 section {
@@ -179,6 +183,17 @@ section {
   display: none;
 }
 
+.download-link {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  display: inline-block;
+  padding: 10px;
+  background-color: #EEE;
+  border: none;
+  text-decoration: none;
+}
+
 /* Print Styles
    ========================================================================== */
 
@@ -187,6 +202,10 @@ section {
  * - Hide elements with CSS class .web-only
  */
 @media print {
+
+  .download-link {
+    display: none;
+  }
 
   // no underline for the links
   a {

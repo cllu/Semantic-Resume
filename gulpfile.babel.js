@@ -23,7 +23,12 @@ gulp.task('html', () => {
     .pipe(browserSync.stream());
 });
 
-gulp.task('default', ['styles', 'scripts', 'html'], () => {
+gulp.task('pdf', () => {
+  gulp.src('resume.pdf')
+    .pipe(gulp.dest('./dist/'));
+});
+
+gulp.task('default', ['styles', 'scripts', 'html', 'pdf'], () => {
 
   browserSync.init({
     server: "./dist/"
