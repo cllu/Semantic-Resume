@@ -1,11 +1,12 @@
 /* Variables
    ========================================================================== */
-$title-font-family: 'Helvetica Neue', 'Helvetica', Verdana, Arial, 'Heiti SC', sans-serif;
 $body-font-family: 'Times New Roman', serif;
+//$title-font-family: 'Helvetica Neue', 'Helvetica', Verdana, Arial, 'Heiti SC', sans-serif;
+$title-font-family: $body-font-family;
 
-$body-font-size: 13px;
+$body-font-size: 14px;
 $h1-font-size: 21px;
-$h2-font-size: 14px;
+$h2-font-size: 16px;
 $ref-font-size: 12px;
 
 $color-default: #444;
@@ -74,8 +75,8 @@ table {
 }
 
 ul, ol {
-  padding-left: 20px;
-  margin: 7px 0;
+  padding-left: 16px;
+  margin: 0 0;
 }
 
 strong {
@@ -126,10 +127,8 @@ a {
 .ref {
   @include fontSize($ref-font-size);
   display: block;
-  float: right;
-  margin: -7px 0 6px;
-  font-family: $title-font-family;
-  font-weight: 300;
+  text-align: right;
+  margin: 0;
   color: #999;
 }
 
@@ -147,9 +146,9 @@ section {
   h2 {
     @include fontSize($h2-font-size);
     font-family: $title-font-family;
+    font-weight: bold;
     padding-top: 12px;
     margin: 0 0 2px 0;
-    font-weight: 400;
     color: #2B8CD2;
     letter-spacing: 0.10rem;
     text-transform: uppercase;
@@ -166,10 +165,15 @@ section {
   }
 
   summary {
+
     clear: both;
     font-weight: 600;
     font-size: 0.813rem;
-    margin: 0 0 0;
+    margin: 0 0 1px 0;
+
+    &::-webkit-details-marker {
+      display:none;
+    }
 
     .job {
       box-sizing: border-box;
@@ -184,6 +188,10 @@ section {
     }
   }
 
+  details + details {
+    margin-top: 6px;
+  }
+
   &.basic {
     text-align: center;
   }
@@ -194,6 +202,7 @@ section {
     }
   }
 }
+
 
 .hide {
   display: none;

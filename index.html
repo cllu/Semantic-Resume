@@ -52,7 +52,7 @@
     <div class="contact">
       <a href="mailto:hi@chunlianglyu.com" target="_blank" itemprop="email">hi@chunlianglyu.com</a>
     </div>
-    <div class="contact" itemprop="telephone">
+    <div class="contact hide" itemprop="telephone">
       +852-54943678
     </div>
 
@@ -78,11 +78,11 @@
         <time>08/2011 - 01/2016</time>
       </summary>
       <ul>
-        <li class="web-only">Adviser:
+        <li class="hide">Adviser:
           <a itemprop="knows" href="http://www.se.cuhk.edu.hk/people/wlam.html">Professor LAM Wai</a>
         </li>
-        <li>Research Focus: Text Mining, Information Retrieval, Knowledge Graph.</li>
-        <li>Thesis: Entity Modeling and Search in Text</li>
+        <li>Research Area: Entity Search, Natural Language Processing, Knowledge Graph.</li>
+
       </ul>
     </details>
 
@@ -95,7 +95,7 @@
         <time>01/2011 - 06/2011</time>
       </summary>
       <ul>
-        <li>Adviser:
+        <li class="hide">Adviser:
           <a itemprop="knows" href="http://faculty.csie.ntust.edu.tw/~klchung/Prof_English.htm">Professor CHUNG Kuo-Liang</a>
         </li>
         <li>Area of Study: Image Classification, Pattern Recognition</li>
@@ -106,7 +106,7 @@
         <span itemprop="alumniOf" itemscope itemtype="http://schema.org/EducationalOrganization">
           <span itemprop="name">Beijing Institute of Technology</span>,
         </span>
-        B.S., Information Engineering, GPA 3.9
+        B.S. in Information Engineering, GPA 3.9
         <time>09/2007 - 06/2011</time>
       </summary>
     </details>
@@ -117,44 +117,27 @@
 
     <details open>
       <summary>
-        Entity Discovery and Retrieval System, Principle Researcher
-        <time>2012-2015</time>
-      </summary>
-      <ul>
-        <li>
-          Proposed a CRF-based distantly supervised method to automatically discover entities from semi-structured webpages,
-          and then construct a positional language modeling for the entity based on the webpage structure.
-          Published in CIKM 2013.
-        </li>
-        <li>
-          Proposed a factoid entity retrieval system based on factor graph.
-          Significantly improved the performance on the entity retrieval task over the state-of-the-art methods.
-          Published in ACL 2015.
-        </li>
-      </ul>
-    </details>
-
-    <details open>
-      <summary>
         <span itemprop="worksFor" itemscope itemtype="http://schema.org/Organization">
           <span itemprop="name">HyperLab</span>,
         </span>
         Co-founder
-        <time>2014-now</time>
+        <time>2014 - now</time>
       </summary>
 
       <ul>
         <!--<li>Cofounded HyperLab Limited, with the support from Hong Kong TSSSU project</li>-->
-        <li>A platform that provides a central entry point for managing personal information across multiple online
-          services.
+        <li>
+          Built a unified platform for managing personal information across more than 13 online services,
+          including cloud storages like Dropbox and social services like Twitter.
         </li>
-        <li>Integrated 13 online services, including cloud storage services like Dropbox, social services like Facebook,
-          note keeping services like Evernote.
+        <li>
+          Implemented the backend in Python 3, using PostgreSQL/ElasticSearch/Celery as main stack.
         </li>
-        <li>Designed and implemented the overall system in Python 3,
-          including PostgreSQL as the database, ElasticSearch as indexing and searching, Celery as task queue.
-          AngularJS as the frontend framework.
-          The whole system can handle tens of thousands of concurrent requests per second.
+        <li>
+          Designed the Web frontend using AngularJS, with automatic unit and end-to-end testing.
+        </li>
+        <li>
+          Optimized the system to handle tens of thousands of concurrent requests per second.
         </li>
         <!--<li> Deployed first to AWS, then migrated to private servers using Docker. </li>-->
       </ul>
@@ -165,15 +148,37 @@
 
     <details open>
       <summary>
+        Entity Modeling and Search System, Principle Researcher
+        <time>2012 - 2015</time>
+      </summary>
+      <ul>
+        <li>
+          Improved the positional language modeling by integrating the DOM structure in the Webpage.
+          Proposed a novel entity search system based on entity factoid hierarchy.
+          Significantly improved the performance on the entity search tasks over existing state-of-the-art methods.
+        </li>
+        <li>
+          Employed Apache Spark to speedup the processing of the Wikipedia data.
+        </li>
+      </ul>
+    </details>
+
+    <details open>
+      <summary>
         SwitchPal, Project Coordinator
         <time>2015</time>
       </summary>
       <ul>
-        <li>Lead a group of four people involving hardware engineer, designer, and software developer.</li>
-        <li>Designed the Bluetooth protocol used to communicate between the device and the smart phone.</li>
-        <li>Designed the hardware based on the <a href="http://www.ti.com/product/cc2540">TI CC2540</a> MCU,
-          designed and implemented the iOS and Android apps to remotely control the device
-          through the Bluetooth 4.0 protocol.
+        <!--<li>Collaborated with a group of four people involving hardware engineer, designer, and software developer.</li>-->
+        <li>
+          Designed a device to toggle the switch using a step motor, controlled via a custom Bluetooth protocol.
+        </li>
+        <li>
+          Developed the hardware based on the <a href="http://www.ti.com/product/cc2540">TI CC2540</a> MCU,
+          implemented the iOS and Android apps.
+        </li>
+        <li>
+          Saved more than 2/3 electric bill by using the device to automatically control the air conditioners in hostels.
         </li>
       </ul>
       <!--<footer class="ref web-only">-->
@@ -188,11 +193,13 @@
       </summary>
       <ul>
         <li>
-          Proposed a recommendation framework based on user profiling,
-          perform the Personalized Random Walk to propagate the relatedness value of keywords in tweets.
+          Utilized user profiles to recommend tweets, achieved superior performance compared to traditional methods.
         </li>
-        <li>Crawled tweets history from hundreds of thousands of Twitter users to evaluate the recommendation system,
-          demonstrated the effectiveness of the proposed algorithms.
+        <li>
+          Constructed Twitter user profiles by aggregating keywords in tweets and performing personalized random walk
+            to propagate the relatedness value among friendship network.
+        </li>
+        <li>Crawled tweets from hundreds of thousands of Twitter users to demonstrated the effectiveness of the system.
         </li>
       </ul>
     </details>
@@ -204,21 +211,13 @@
 
     <ul>
       <li>
-        Research Fields: Word Embedding,
-        Conditional Random Field,
-        Factor Graph,
-        MCMC,
-        Entity Retrieval,
-        Information Extraction,
-        Knowledge Graph
-      </li>
-      <li>
         Language:
         <span itemscope itemtype="http://schema.org/Language">Scala</span>,
         <span itemscope itemtype="http://schema.org/Language">Python</span>,
         <span itemscope itemtype="http://schema.org/Language">Java</span>,
         <span itemscope itemtype="http://schema.org/Language">JavaScript</span>,
-        <span itemscope itemtype="http://schema.org/Language">C/C++</span>
+        <span itemscope itemtype="http://schema.org/Language">C/C++</span>,
+        <span itemscope itemtype="http://schema.org/Language">Go<span>
       </li>
       <li>
         Database: PostgreSQL, MongoDB, MySQL
@@ -226,16 +225,15 @@
       <li>
         Framework: ElasticSearch, Lucene, Hadoop, Spark, ReactJS, AngularJS
       </li>
+      <li>
+        Tools: Linux/OS X/Windows, IntelliJ IDEA/Eclipse, Git
+      </li>
     </ul>
   </section>
 
   <section class="experience">
     <h2>Experience</h2>
     <ul>
-      <li>
-        Co-Founder of <a href="http://hyperlab.io">HyperLab Limited</a>, responsible for the design and development of
-        the Hyperlink platform
-      </li>
       <li>Teaching Assistant for four undergraduate and master engineering courses at CUHK, 2012-2015</li>
       <li>
         Volunteer for the
@@ -265,10 +263,8 @@
         <span itemprop="headline">Entity Retrieval via Entity Factoid Hierarchy.</span>
         In:
         <em itemprop="isPartOf" itemscope itemtype="http://schema.org/Book">
-          <span itemprop="name">Proceedings of the 53rd Annual Meeting of the Association for Computational Linguistics and the 7th
-          International Joint Conference on Natural Language Processing of the Asian Federation of Natural Language
-          Processing(ACL)</span>
-        </em>.
+          <span itemprop="name">Proceedings of the 53rd Annual Meeting of the Association for Computational Linguistics (ACL)</span>.
+        </em>
         <span itemprop="datePublished">2015</span>.
         <span class="web-only">[<a itemprop="url" href="https://chunlianglyu.com/docs/acl15.pdf">PDF</a>]</span>
         <meta itemprop="image" content="http://placehold.it/160x90">
@@ -283,8 +279,8 @@
         <span itemprop="headline">Website Community Mining from Query Logs with Two-phase Clustering</span>.
         In:
         <em itemprop="isPartOf" itemscope itemtype="http://schema.org/Book">
-          <span itemprop="name">Proceedings of the 15th International Conference on Intelligent Text Processing and Computational Linguistics(CICLing)</span>
-        </em>.
+          <span itemprop="name">Proceedings of the 15th International Conference on Intelligent Text Processing and Computational Linguistics(CICLing)</span>.
+        </em>
         <span itemprop="datePublished">2014</span>.
         <span class="web-only">[<a itemprop="url" href="https://chunlianglyu.com/docs/cicling14.pdf">PDF</a>]</span>
         <meta itemprop="image" content="http://placehold.it/160x90">
@@ -299,8 +295,8 @@
 
         <span itemprop="headline">Web Entity Detection for Semi-structured Text Data Records with Unlabeled Data</span>.
         <em itemprop="isPartOf" itemscope itemtype="http://schema.org/Periodical">
-          <span itemprop="name">International Journal of Computational Linguistics and Applications (IJCLA)</span>
-        </em>.
+          <span itemprop="name">International Journal of Computational Linguistics and Applications (IJCLA)</span>.
+        </em>
         <span itemprop="datePublished">2013</span>.
         <span class="web-only">[<a itemprop="url" href="https://chunlianglyu.com/docs/ijcla13.pdf">PDF</a>]</span>
         <meta itemprop="image" content="http://placehold.it/160x90">
@@ -314,8 +310,8 @@
         <span itemprop="headline">Structured Positional Entity Language Model for Enterprise Entity Retrieval</span>.
         In:
         <em itemprop="isPartOf" itemscope itemtype="http://schema.org/Book">
-          <span itemprop="name">Proceedings of the 22nd ACM Conference on Information and Knowledge Management (CIKM)</span>
-        </em>.
+          <span itemprop="name">Proceedings of the 22nd ACM Conference on Information and Knowledge Management (CIKM)</span>.
+        </em>
         <span itemprop="datePublished">2013</span>.
         <span class="web-only">[<a itemprop="url" href="https://chunlianglyu.com/docs/cikm13.pdf">PDF</a>]</span>
         <meta itemprop="image" content="http://placehold.it/160x90">
@@ -329,8 +325,8 @@
         <span itemprop="headline">Twitter User Modeling and Tweets Recommendation based on Wikipedia Concept Graph</span>.
         In:
         <em itemprop="isPartOf" itemscope itemtype="http://schema.org/Book">
-          <span itemprop="name">The AAAI Workshop on Intelligent Techniques For Web Personalization and Recommender Systems (ITWP)</span>
-        </em>.
+          <span itemprop="name">The AAAI Workshop on Intelligent Techniques For Web Personalization and Recommender Systems (ITWP)</span>.
+        </em>
         <span itemprop="datePublished">2012</span>.
         <span class="web-only">[<a itemprop="url" href="https://chunlianglyu.com/docs/itwp12.pdf">PDF</a>]</span>
         <meta itemprop="image" content="http://placehold.it/160x90">
@@ -343,7 +339,6 @@
     <ul>
 
       <li itemscope itemtype="http://schema.org/BlogPosting">
-        <!-- TODO: correct url -->
         <a href="https://chunlianglyu.com/articles/sorm2/">
           <span itemprop="headline">SORM2: Digging into Scala Internals</span>
         </a> - <time itemprop="datePublished" datetime="2015-12-04">Dec, 2015</time>
@@ -351,7 +346,6 @@
       </li>
 
       <li itemscope itemtype="http://schema.org/BlogPosting">
-        <!-- TODO: correct url -->
         <a href="https://chunlianglyu.com/articles/html-resume-with-semantic-markup/">
           <span itemprop="headline">HTML Resume with Semantic Markup</span>
         </a> - <time itemprop="datePublished" datetime="2015-11-20">Nov, 2015</time>
@@ -366,7 +360,6 @@
       </li>
 
       <li itemscope itemtype="http://schema.org/BlogPosting">
-        <!-- TODO: correct url -->
         <a href="https://chunlianglyu.com/articles/control-air-conditioner-with-raspberry-pi/">
           <span itemprop="headline">Control the Air Conditioner with Raspberry Pi</span>
         </a> - <time itemprop="datePublished" datetime="2013-08-08">Aug, 2013</time>
