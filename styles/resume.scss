@@ -1,9 +1,17 @@
 /* Variables
    ========================================================================== */
-$font-title: 'Helvetica Neue', 'Helvetica', Verdana, Arial, 'Heiti SC', sans-serif;
-$body-font: 'Times New Roman', serif;
+$title-font-family: 'Helvetica Neue', 'Helvetica', Verdana, Arial, 'Heiti SC', sans-serif;
+$body-font-family: 'Times New Roman', serif;
+
+$body-font-size: 13px;
+$h1-font-size: 21px;
+$h2-font-size: 14px;
+$ref-font-size: 12px;
+
 $color-default: #444;
-$background-color: #EEEEEE;
+
+@import "media";
+@import "mixins";
 
 @import "normalize";
 @import "page";
@@ -23,14 +31,15 @@ $background-color: #EEEEEE;
   outline:0 !important;
 }
 
+html {
+  font-size: 100%;
+}
+
 body {
-  font-size: 10pt;
-  font-family: $body-font;
+  @include fontSize($body-font-size);
+  font-family: $body-font-family;
   margin: 0 auto;
   color: #444;
-
-  /* Use a non-white background color to make the content areas stick out from the full page box */
-  background-color: $background-color;
 }
 
 /* For all headings */
@@ -43,7 +52,7 @@ h1, h2, h3, h4, h5, h6 {
 p {
   /* Reset the margin so that the text starts and ends at the expected marks */
   margin: 0;
-  line-height: 1.45em;
+  line-height: 1.45rem;
   font-weight: 300;
   color: #030303;
 
@@ -74,10 +83,14 @@ strong {
 }
 
 h1 {
-  font-size: 16pt;
-  margin: 0 0 6pt;
+  @include fontSize(21px);
+  margin: 0 0 8px;
   font-weight: 400;
   color: #030303;
+
+  @media #{$small-screen-only} {
+    padding-top: 10px;
+  }
 }
 
 /* For links in the document */
@@ -91,7 +104,7 @@ a {
 .contact {
   font-weight: 300;
   color: #444;
-  line-height: 1.35em;
+  line-height: 1.35rem;
   display: block;
 
   a {
@@ -111,11 +124,11 @@ a {
 }
 
 .ref {
-  font-size: 9pt;
+  @include fontSize($ref-font-size);
   display: block;
   float: right;
-  margin: -7px 0 5pt;
-  font-family: $font-title;
+  margin: -7px 0 6px;
+  font-family: $title-font-family;
   font-weight: 300;
   color: #999;
 }
@@ -127,32 +140,35 @@ main {
 /* Sections
    ========================================================================== */
 section {
+  @media #{$screen-only} {
+    margin-bottom: 0.5rem;
+  }
 
   h2 {
-    font-size: 11pt;
-    font-family: $font-title;
-    padding-top: 9pt;
-    margin: 0 0 2pt 0;
+    @include fontSize($h2-font-size);
+    font-family: $title-font-family;
+    padding-top: 12px;
+    margin: 0 0 2px 0;
     font-weight: 400;
     color: #2B8CD2;
     letter-spacing: 0.10rem;
     text-transform: uppercase;
     border-bottom: 0.8px solid #E5E5E5;
-    padding-bottom: 3pt;
+    padding-bottom: 4px;
     
     // see more
     a {
-      font-size: 9px;
+      font-size: 0.563rem;
+      padding-top: 3px;
       float: right;
-      text-transform: lowercase;
-      color: #555; 
+      color: #555;
     }
   }
 
   summary {
     clear: both;
     font-weight: 600;
-    font-size: 10pt;
+    font-size: 0.813rem;
     margin: 0 0 0;
 
     .job {
@@ -162,7 +178,7 @@ section {
     }
 
     time {
-      font-family: $font-title;
+      font-family: $title-font-family;
       font-weight: 200;
       color: #7A7A7A;
     }
@@ -185,13 +201,21 @@ section {
 
 .download-link {
   position: absolute;
-  top: 40px;
-  right: 40px;
   display: inline-block;
-  padding: 10px;
   background-color: #EEE;
   border: none;
   text-decoration: none;
+
+  padding: 10px;
+  top: 40px;
+  right: 40px;
+
+  @media #{$small-screen-only} {
+    @include fontSize(9px);
+    top: 0;
+    right: 0;
+    content: "PDF";
+  }
 }
 
 /* Print Styles
@@ -218,7 +242,7 @@ section {
     }
 
     h2 {
-      border-bottom: 0.5pt solid #DDD;
+      border-bottom: 1px solid #DDD;
       a {
         display: none;
       }
@@ -226,7 +250,7 @@ section {
   }
 
   p {
-    font-family: $body-font;
+    font-family: $body-font-family;
     color: #030303;
   }
 

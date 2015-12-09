@@ -1,0 +1,13 @@
+// we only define a single breakpoint for screen
+// - on large screen, we display the paper style
+// - on small screen, we display a minimal style
+$scree-breakpoint: "1024px" !default;
+
+$small-screen-only: "only screen and (max-width:#{$scree-breakpoint})" !default;
+$large-screen-only: "only screen and (min-width:#{$scree-breakpoint})" !default;
+
+// some stuff are only displayed on screen/print
+$screen-only: "only screen" !default;
+$print-only: "only print" !default;
+
+

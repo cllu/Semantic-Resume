@@ -1,12 +1,22 @@
 /**
  * Styling for the main element, including a .page-break element
  */
+@import "media";
+
+$background-color: #EEEEEE;
 
 /* Defines a class for manual page breaks via inserted .page-break element */
 div.page-break {
+  border: none;
+  margin: 0;
+  display: none;
+
   page-break-after: always;
-  border-bottom: 1px dashed #DDD;
-  margin: 1cm -2cm;
+
+  @media #{$large-screen-only} {
+    border-bottom: 1px dashed #DDD;
+    margin: 1cm -2cm;
+  }
 }
 
 /* Use CSS Paged Media to switch from continuous documents to sheet-like documents with separate pages */
@@ -26,21 +36,41 @@ div.page-break {
   //widows: 2;
 }
 
-/* When the document is actually printed */
-@media print {
+html, body {
+  background-color: white;
 
-  /* Reset the document's background color */
-  html, body {
-    background-color: #fff;
+  @media #{$large-screen-only} {
+    /* Use a non-white background color to make the content areas stick out from the full page box */
+    background-color: $background-color;
+  }
+}
+
+main {
+  // on small screen, show plain layout
+  @media #{$small-screen-only} {
+    background: white;
+    margin: 20px;
   }
 
-  // hide page-break elements
-  div.page-break {
-    border: none;
-    margin: 0;
+  // on large screen, display A4 size + padding left and right
+  @media #{$large-screen-only} {
+    /* Divide single pages with some space and center all pages horizontally */
+    margin: 1cm auto;
+    /* Define a white paper background that sticks out from the darker overall background */
+    background: #fff;
+    /* Show a drop shadow beneath each page */
+    box-shadow: 0 4px 5px rgba(75, 75, 75, 0.2);
+
+    /* Reflect the paper width in the screen rendering (must match size from @page rule) */
+    width: 21cm;
+    /* Reflect the paper height in the screen rendering (must match size from @page rule) */
+    min-height: 29.7cm;
+
+    /* Margin per single side of the page */
+    padding: 2cm;
   }
 
-  main {
+  @media #{$print-only} {
     /* Reset all page styles that have been for better screen appearance only */
     /* Break cascading by using the !important rule */
     /* These resets are absolute must-haves for the print styles and the specificity may be higher elsewhere */
@@ -58,35 +88,3 @@ div.page-break {
   }
 }
 
-// A4 size + padding left and right
-@media only screen and (min-width: 25cm) {
-  main {
-    /* Divide single pages with some space and center all pages horizontally */
-    margin: 1cm auto;
-    /* Define a white paper background that sticks out from the darker overall background */
-    background: #fff;
-    /* Show a drop shadow beneath each page */
-    box-shadow: 0 4px 5px rgba(75, 75, 75, 0.2);
-
-    /* Reflect the paper width in the screen rendering (must match size from @page rule) */
-    width: 21cm;
-    /* Reflect the paper height in the screen rendering (must match size from @page rule) */
-    min-height: 29.7cm;
-
-    /* Margin per single side of the page */
-    padding: 2cm;
-  }
-}
-
-@media only screen and (max-width: 25cm) {
-  html, body {
-    background-color: white;
-  }
-  main {
-    background: white;
-    margin: 1cm;
-  }
-  div.page-break {
-    display: none;
-  }
-}
