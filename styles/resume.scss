@@ -53,9 +53,7 @@ h1, h2, h3, h4, h5, h6 {
 p {
   /* Reset the margin so that the text starts and ends at the expected marks */
   margin: 0;
-  line-height: 1.45rem;
   font-weight: 300;
-  color: #030303;
 
   a {
     color: #2B8CD2;
@@ -196,10 +194,10 @@ section {
     text-align: center;
   }
 
+  time {
+    float: right;
+  }
   &.education {
-    time {
-      float: right;
-    }
   }
 }
 
