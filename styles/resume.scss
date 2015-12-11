@@ -1,16 +1,4 @@
-/* Variables
-   ========================================================================== */
-$body-font-family: 'Times New Roman', serif;
-//$title-font-family: 'Helvetica Neue', 'Helvetica', Verdana, Arial, 'Heiti SC', sans-serif;
-$title-font-family: $body-font-family;
-
-$body-font-size: 14px;
-$h1-font-size: 21px;
-$h2-font-size: 16px;
-$ref-font-size: 12px;
-
-$color-default: #444;
-
+@import "variables";
 @import "media";
 @import "mixins";
 
@@ -37,10 +25,10 @@ html {
 }
 
 body {
-  @include fontSize($body-font-size);
+  @include fontSize($primary-font-size);
   font-family: $body-font-family;
   margin: 0 auto;
-  color: #444;
+  color: $primary-color;
 }
 
 /* For all headings */
@@ -54,10 +42,6 @@ p {
   /* Reset the margin so that the text starts and ends at the expected marks */
   margin: 0;
   font-weight: 300;
-
-  a {
-    color: #2B8CD2;
-  }
 }
 
 /* For adjacent paragraph tags */
@@ -85,7 +69,6 @@ h1 {
   @include fontSize(21px);
   margin: 0 0 8px;
   font-weight: 400;
-  color: #030303;
 
   @media #{$small-screen-only} {
     padding-top: 10px;
@@ -94,16 +77,15 @@ h1 {
 
 /* For links in the document */
 a {
-  color: black;
+  color: $primary-color;
   // use a dashed underline for decoration
   text-decoration: none;
-  border-bottom: 1px dashed #ddd;
+  border-bottom: 1px dashed $divider-color;
 }
 
 .contact {
   font-weight: 300;
-  color: #444;
-  line-height: 1.35rem;
+  line-height: 1.2rem;
   display: block;
 
   a {
@@ -122,14 +104,6 @@ a {
   }
 }
 
-.ref {
-  @include fontSize($ref-font-size);
-  display: block;
-  text-align: right;
-  margin: 0;
-  color: #999;
-}
-
 main {
   position: relative;
 }
@@ -146,19 +120,17 @@ section {
     font-family: $title-font-family;
     font-weight: bold;
     padding-top: 12px;
-    margin: 0 0 2px 0;
-    color: #2B8CD2;
-    letter-spacing: 0.10rem;
+    margin: 0 0 4px 0;
+    color: $accent-color;
     text-transform: uppercase;
     border-bottom: 0.8px solid #E5E5E5;
-    padding-bottom: 4px;
+    padding-bottom: 2px;
     
     // see more
     a {
-      font-size: 0.563rem;
+      @include fontSize($ref-font-size);
       padding-top: 3px;
       float: right;
-      color: #555;
     }
   }
 
@@ -166,7 +138,6 @@ section {
 
     clear: both;
     font-weight: 600;
-    font-size: 0.813rem;
     margin: 0 0 1px 0;
 
     &::-webkit-details-marker {
@@ -182,7 +153,7 @@ section {
     time {
       font-family: $title-font-family;
       font-weight: 200;
-      color: #7A7A7A;
+      color: $secondary-color;
     }
   }
 
@@ -194,13 +165,12 @@ section {
     text-align: center;
   }
 
-  time {
-    float: right;
-  }
-  &.education {
+  &.education, &.projects {
+    time {
+      float: right;
+    }
   }
 }
-
 
 .hide {
   display: none;
@@ -244,21 +214,20 @@ section {
   }
 
   section {
-    h2, h3 {
-      color: #55AAFF;
-    }
-
     h2 {
-      border-bottom: 1px solid #DDD;
+      margin: 0 0 6px 0;
+      color: $accent-color-print;
+      border-bottom: 1px solid $divider-color;
+      // see more
       a {
         display: none;
       }
     }
   }
 
-  p {
-    font-family: $body-font-family;
-    color: #030303;
+  // for some unknown reason, we need to declare this rule again to make the exported PDF work
+  section summary time {
+    color: $secondary-color-print;
   }
 
   .web-only {

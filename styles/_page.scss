@@ -1,9 +1,8 @@
 /**
  * Styling for the main element, including a .page-break element
  */
+@import "variables";
 @import "media";
-
-$background-color: #EEEEEE;
 
 /* Defines a class for manual page breaks via inserted .page-break element */
 div.page-break {
@@ -14,7 +13,7 @@ div.page-break {
   page-break-after: always;
 
   @media #{$large-screen-only} {
-    border-bottom: 1px dashed #DDD;
+    border-bottom: 1px dashed $divider-color;
     margin: 1cm -2cm;
   }
 }
@@ -23,7 +22,7 @@ div.page-break {
 @page {
   /* You can only change the size, margins, orphans, widows and page breaks here */
   /* Paper size and page orientation */
-  size: A4 portrait;
+  size: $page-size portrait;
 
   /* Margin per single side of the page */
   /* only works if you set Margin to Default in the print dialog */
@@ -62,9 +61,9 @@ main {
     box-shadow: 0 4px 5px rgba(75, 75, 75, 0.2);
 
     /* Reflect the paper width in the screen rendering (must match size from @page rule) */
-    width: 21cm;
+    width: $page-width;
     /* Reflect the paper height in the screen rendering (must match size from @page rule) */
-    min-height: 29.7cm;
+    min-height: $page-height;
 
     /* Margin per single side of the page */
     padding: 2cm;

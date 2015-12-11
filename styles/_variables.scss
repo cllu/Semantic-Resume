@@ -1,0 +1,36 @@
+/* Font
+   ========================================================================== */
+$body-font-family: 'Times New Roman', serif;
+//$title-font-family: 'Helvetica Neue', 'Helvetica', Verdana, Arial, 'Heiti SC', sans-serif;
+$title-font-family: $body-font-family;
+
+$primary-font-size: 14px;
+// name
+$h1-font-size: 21px;
+// section title
+$h2-font-size: 16px;
+// used for the "see more" link
+$ref-font-size: 10px;
+
+
+/* Color
+   ========================================================================== */
+// page background
+$background-color: #EEEEEE;
+// used for most of the text
+$primary-color: #444;
+// used for less important text, such as time span
+$secondary-color: #777;
+$secondary-color-print: #BBB;
+// used for the section title
+$accent-color: #2B8CD2;
+$accent-color-print: #55AAFF;
+// the color for the horizontal lines in the PDF version
+$divider-color: #DDD;
+
+
+/* Spacing
+   ========================================================================== */
+$page-size: A4;
+$page-width: 21cm;
+$page-height: 29.7cm;
