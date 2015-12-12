@@ -1,8 +1,16 @@
+// colors
 $action-default-color: black;
 $action-background-color: #DDD;
 $action-hover-background-color: #BBB;
 $action-active-color: white;
 $action-active-background-color: #2B8CD2;
+
+// spacing
+$footer-height: 28px;
+
+// fonts
+$default-font: 'Open Sans', sans-serif;
+$monospace-font: "Source Code Pro", Consolas, Monaco, Menlo, Consolas, monospace;
 
 html, body {
   width: 100%;
@@ -11,18 +19,47 @@ html, body {
   padding: 0;
 }
 
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
 main {
   width: 100%;
   height: 100%;
   display: flex;
+  flex: 1;
   flex-direction: row;
 }
 
+aside {
+  font-family: $default-font;
+  height: 100%;
+}
+
 #editor {
-  width: 600px;
+  height: calc(100vh - #{$footer-height});
+  margin-left: 10px;
+
+  .CodeMirror {
+    font-family: $monospace-font;
+    font-size: 14px;
+  }
 }
-.CodeMirror {
+
+footer {
+  height: $footer-height;
+  background-color: rgba(85, 170, 255, 0.2);
+
+  p {
+    color: #666;
+    margin: 0 0 0 10px;
+    font-size: 14px;
+    line-height: $footer-height;
+  }
 }
+
 
 #resizer {
   width: 5px;
@@ -102,7 +139,10 @@ main {
 
 
 @media print {
-  #editor, .CodeMirror, #toggle-code {
+  main {
+    height: 100%;
+  }
+  footer, #editor, .CodeMirror, #actions {
     display: none;
   }
 }
