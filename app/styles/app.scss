@@ -1,6 +1,8 @@
 html, body {
   width: 100%;
   height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 main {
@@ -14,7 +16,13 @@ main {
   width: 600px;
 }
 .CodeMirror {
-  border: 1px solid #DDDDDD;
+}
+
+#resizer {
+  width: 5px;
+  height: 100%;
+  background-color: #DDDDDD;
+  cursor: col-resize;
 }
 
 #preview {

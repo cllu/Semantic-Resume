@@ -1,19 +1,19 @@
 import marked from 'marked';
 import fm from 'front-matter';
+import debounce from 'debounce';
 
-const htmlTemplate = (content) => `<!DOCTYPE html>
+const htmlTemplate = (name, content) => `<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8"/>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
 
-  <meta name="author" content="Chunliang Lyu">
-  <title>Chunliang Lyu — Resume</title>
+  <meta name="author" content="${name}">
+  <title>${name} — Resume</title>
   <link rel="shortcut icon" href="/favicon.ico"/>
   <link rel="stylesheet" type="text/css" href="styles/resume.css">
   <script src="scripts/resume.js"></script>
-
 </head>
 <body>
 
@@ -22,8 +22,7 @@ ${content}
 </main>
 
 </body>
-</html>
-`;
+</html>`;
 
 function render(text) {
   var content = fm(text);
@@ -31,6 +30,11 @@ function render(text) {
 
   var sectionOpened = false;
   var detailsOpened = false;
+
+  // the date span may appear in a <summary> element(third heading)
+  const dateRe = /{\d{4}(?: - \d{4})?}/;
+
+  var name = meta.name;
 
   var renderer = new marked.Renderer();
   renderer.heading = function (text, level) {
@@ -47,10 +51,14 @@ function render(text) {
           html += `<li><a href="${meta.website}">${meta.email}</a></li>\n`;
         }
         if (meta.github) {
-          var githubLink = 'https://github.com/'+meta.github;
-          html += `<li><a href="${githubLink}">${githubLink}</a></li>\n`;
+          var githubLink = 'github.com/'+meta.github;
+          html += `<li><a href="https://${githubLink}">${githubLink}</a></li>\n`;
         }
         html += '</section>\n';
+
+        if (!name) {
+          name = text;
+        }
         break;
 
       case 2:
@@ -76,7 +84,14 @@ function render(text) {
           html += "\n</details>\n";
         }
 
-        html += `<details open>\n<summary>${text}</summary>\n`;
+        var match = dateRe.exec(text);
+        var summary;
+        if (match != null) {
+          summary = text.replace(match[0], '') + `<time>${match[0].replace(/[{}]/g, '')}</time>`;
+        } else {
+          summary = text;
+        }
+        html += `<details open>\n<summary>${summary}</summary>\n`;
         detailsOpened = true;
     }
     return html;
@@ -95,7 +110,7 @@ function render(text) {
   if (sectionOpened) {
     html += "</section>\n";
   }
-  return htmlTemplate(html);
+  return htmlTemplate(name, html);
 }
 
 var previewElement = document.getElementById('preview');
@@ -112,7 +127,8 @@ function updatePreview() {
 // on page load
 var editor = CodeMirror.fromTextArea(document.getElementById('editor'), {
   mode: "gfm",
-  lineNumbers: true
+  lineNumbers: true,
+  lineWrapping: true
 });
 editor.setSize("600px", "100%");
 
@@ -120,5 +136,33 @@ editor.on('change', function() {
   updatePreview();
 });
 updatePreview();
+
+var resizeEditor = debounce((width, height) => {
+  editor.setSize(width, height);
+}, 300);
+
+var resizer = document.getElementById('resizer');
+var isResizing = false;
+var mouseDownX = 600;
+var editorWidth = 600;
+resizer.addEventListener('mousedown', (e) => {
+  isResizing = true;
+  iframe.style.pointerEvents = 'none';
+  mouseDownX = e.clientX;
+  editorWidth = resizer.offsetLeft;
+});
+document.addEventListener('mousemove', (e) => {
+  if (!isResizing) return;
+  // calling resizeEditor is too costly
+  editor.getWrapperElement().style.width = (editorWidth + e.clientX - mouseDownX) + 'px';
+});
+document.addEventListener('mouseup', (e) => {
+  if (isResizing) {
+    isResizing = false;
+    iframe.style.pointerEvents = 'auto';
+    editorWidth = editorWidth + e.clientX - mouseDownX;
+    resizeEditor(editorWidth);
+  }
+});
 
 export default render;
