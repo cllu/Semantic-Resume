@@ -1,3 +1,9 @@
+$action-default-color: black;
+$action-background-color: #DDD;
+$action-hover-background-color: #BBB;
+$action-active-color: white;
+$action-active-background-color: #2B8CD2;
+
 html, body {
   width: 100%;
   height: 100%;
@@ -28,16 +34,74 @@ main {
 #preview {
   flex: 1;
   height: 100%;
+  position: relative;
 
   iframe {
     border: none;
     width: 100%;
     height: 100%;
   }
+
+  // by default, the source is hidden
+  #source {
+    display: none;
+    position: absolute;
+    overflow: scroll;
+    background-color: #1d1f21;
+
+    margin: 0;
+    padding: 10px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
 }
 
+#actions {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  font-size: 16px;
+
+  list-style: none;
+
+  li {
+    display: inline-block;
+    cursor: pointer;
+
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+
+    color: $action-default-color;
+    background-color: $action-background-color;
+    &:hover {
+      background-color: $action-hover-background-color;
+    }
+    &.on {
+      color: $action-active-color;
+      background-color: $action-active-background-color;
+    }
+  }
+
+  i {
+    text-align: center;
+    line-height: 40px;
+    width: 40px;
+  }
+
+  #download {
+    a {
+      pointer-events: none;
+      display: none;
+    }
+  }
+}
+
+
 @media print {
-  #editor, .CodeMirror {
+  #editor, .CodeMirror, #toggle-code {
     display: none;
   }
 }

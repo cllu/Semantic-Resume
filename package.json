@@ -16,6 +16,7 @@
   "dependencies": {
     "debounce": "^1.0.0",
     "front-matter": "^2.0.1",
+    "js-beautify": "^1.5.10",
     "marked": "^0.3.5"
   },
   "devDependencies": {

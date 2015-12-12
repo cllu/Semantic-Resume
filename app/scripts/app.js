@@ -1,6 +1,7 @@
 import marked from 'marked';
 import fm from 'front-matter';
 import debounce from 'debounce';
+var beautify_html = require('js-beautify').html;
 
 const htmlTemplate = (name, content) => `<!DOCTYPE html>
 <html lang="en">
@@ -13,7 +14,7 @@ const htmlTemplate = (name, content) => `<!DOCTYPE html>
   <title>${name} — Resume</title>
   <link rel="shortcut icon" href="/favicon.ico"/>
   <link rel="stylesheet" type="text/css" href="styles/resume.css">
-  <script src="scripts/resume.js"></script>
+  <script src="scripts/details.polyfill.js"></script>
 </head>
 <body>
 
@@ -54,7 +55,7 @@ function render(text) {
           var githubLink = 'github.com/'+meta.github;
           html += `<li><a href="https://${githubLink}">${githubLink}</a></li>\n`;
         }
-        html += '</section>\n';
+        html += '</ul>\n</section>\n';
 
         if (!name) {
           name = text;
@@ -116,9 +117,11 @@ function render(text) {
 var previewElement = document.getElementById('preview');
 var iframe = document.createElement('iframe');
 previewElement.appendChild(iframe);
+var sourceElement = document.getElementById('source');
 
 function updatePreview() {
   var rendered = render(editor.getValue());
+
   iframe.contentWindow.document.open();
   iframe.contentWindow.document.write(rendered);
   iframe.contentWindow.document.close();
@@ -163,6 +166,28 @@ document.addEventListener('mouseup', (e) => {
     editorWidth = editorWidth + e.clientX - mouseDownX;
     resizeEditor(editorWidth);
   }
+});
+
+var codeToggle = document.getElementById('toggle-code');
+codeToggle.addEventListener('click', (e) => {
+  if (codeToggle.className == 'on') {
+    codeToggle.className = 'off';
+    sourceElement.style.display = "none";
+  } else {
+    var rendered = render(editor.getValue());
+    sourceElement.innerHTML = beautify_html(rendered, { indent_size: 2 }).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+    hljs.highlightBlock(sourceElement);
+
+    codeToggle.className = 'on';
+    sourceElement.style.display = "block";
+  }
+});
+
+document.getElementById('download').addEventListener('click', (e) => {
+  if (e.target.tagName != 'I') return false;
+  var holder = e.target.querySelector('a');
+  holder.setAttribute('href', 'data:text/plain;charset=utf8,' + encodeURIComponent(beautify_html(render(editor.getValue()))));
+  holder.click();
 });
 
 export default render;
