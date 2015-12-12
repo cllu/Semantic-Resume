@@ -1,3 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Semantic Resume</title>
+
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.9.0/codemirror.min.css"/>
+  <link rel="stylesheet" type="text/css" href="styles/app.css"/>
+</head>
+<body>
+
+<main>
+
+<textarea id="editor">
 ---
 name: Chunliang Lyu
 website: https://chunlianglyu.com
@@ -21,7 +35,7 @@ Hyperlink is a unified platform for searching and managing personal information 
 services, such as social updates from Twitter and cloud files from Dropbox.
 
 - Developed the backend in Python 3, with Flask/PostgreSQL/ElasticSearch/Celery as main stack.
-- Designed the frontend usingAngularJS, including extensive unit and end-to-end testing. 
+- Designed the frontend usingAngularJS, including extensive unit and end-to-end testing.
 - Deployed and optimized the system onAmazon Web Services to support up to 10K concurrent users.
 
 ### SwitchPal, Project Leader {2014 - 2015}
@@ -67,4 +81,20 @@ Built a personalized tweets recommendation system based on user profiles, achiev
   Meeting of the Association for Computational Linguistics (ACL). 2015.
 - C. Lu, L. Bing, W. Lam. Structured Positional Entity Language Model for Enterprise Entity Retrieval. In:
   Proceedings of the 22nd ACM Conference on Information and Knowledge Management (CIKM). 2013.
+</textarea>
 
+  <div id="preview">
+  </div>
+
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.9.0/codemirror.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.9.0/addon/mode/overlay.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.9.0/mode/markdown/markdown.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.9.0/mode/gfm/gfm.min.js"></script>
+<script src="scripts/app.js"></script>
+<script type="text/javascript">
+</script>
+
+</body>
+</html>

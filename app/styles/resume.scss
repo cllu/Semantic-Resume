@@ -83,27 +83,6 @@ a {
   border-bottom: 1px dashed $divider-color;
 }
 
-.contact {
-  font-weight: 300;
-  line-height: 1.2rem;
-  display: block;
-
-  a {
-    display: inline-block;
-  }
-
-  span em {
-    font-style: normal;
-    width: 130px;
-  }
-
-  em {
-    font-style: normal;
-    display: inline-block;
-    width: 130px;
-  }
-}
-
 main {
   position: relative;
 }
@@ -163,6 +142,15 @@ section {
 
   &.basic {
     text-align: center;
+    ul {
+      list-style: none;
+    }
+    li {
+      display: block;
+    }
+    a {
+      line-height: 1.2rem;
+    }
   }
 
   &.education, &.projects {
