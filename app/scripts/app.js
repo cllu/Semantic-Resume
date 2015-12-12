@@ -43,17 +43,17 @@ function render(text) {
     switch (level) {
       case 1:
         // the top level heading is for title and contact information
-        html += `<section class="basic">\n<h1>${text}</h1>\n<ul>\n`;
+        html += `<section class="basic">\n<h1 itemprop="name">${text}</h1>\n<ul>\n`;
         // render attributes
         if (meta.website) {
-          html += `<li><a href="${meta.website}">${meta.website}</a></li>\n`;
+          html += `<li><a href="${meta.website}" itemprop="url">${meta.website}</a></li>\n`;
         }
         if (meta.email) {
-          html += `<li><a href="${meta.website}">${meta.email}</a></li>\n`;
+          html += `<li><a href="${meta.website}" itemprop="email">${meta.email}</a></li>\n`;
         }
         if (meta.github) {
           var githubLink = 'github.com/'+meta.github;
-          html += `<li><a href="https://${githubLink}">${githubLink}</a></li>\n`;
+          html += `<li><a href="https://${githubLink}" itemprop="sameAs">${githubLink}</a></li>\n`;
         }
         html += '</ul>\n</section>\n';
 
@@ -96,6 +96,27 @@ function render(text) {
         detailsOpened = true;
     }
     return html;
+  };
+  renderer.link = function(href, title, text) {
+    switch (title) {
+      case 'alumniOf':
+        return `<span itemprop="alumniOf" itemscope itemtype="http://schema.org/EducationalOrganization">
+                <link href="${href}" itemprop="url">
+                <span itemprop="name">${text}</span>
+              </span>`;
+      case 'worksFor':
+        return `<span itemprop="worksFor" itemscope itemtype="http://schema.org/Organization">
+                <link href="${href}" itemprop="url">
+                <span itemprop="name">${text}</span>
+              </span>`;
+      default:
+        var out = '<a href="' + href + '"';
+        if (title) {
+          out += ' title="' + title + '"';
+        }
+        out += '>' + text + '</a>';
+        return out;
+    }
   };
 
   var options = {
@@ -168,7 +189,18 @@ document.addEventListener('mouseup', (e) => {
   }
 });
 
-var codeToggle = document.getElementById('toggle-code');
+const editorToggle = document.getElementById('toggle-editor');
+editorToggle.addEventListener('click', (e) => {
+  if (editorToggle.className == 'on') {
+    editorToggle.className = 'off';
+    editor.getWrapperElement().style.display = 'none';
+  } else {
+    editorToggle.className = 'on';
+    editor.getWrapperElement().style.display = 'block';
+  }
+});
+
+const codeToggle = document.getElementById('toggle-code');
 codeToggle.addEventListener('click', (e) => {
   if (codeToggle.className == 'on') {
     codeToggle.className = 'off';
