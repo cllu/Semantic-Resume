@@ -2,6 +2,8 @@ node_modules/
 
 # build files
 dist
+app/styles/resume.min.css
+app/scripts/polyfill.min.js
 
 .sass-cache
 

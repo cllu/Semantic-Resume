@@ -1,40 +1,21 @@
 import fs from 'fs';
-import source from 'vinyl-source-stream';
 import gulp from 'gulp';
+import rename from 'gulp-rename';
+import minifyCss from 'gulp-minify-css';
+import uglify from 'gulp-uglify';
 import sass from 'gulp-sass';
-import browserify from 'browserify';
-import watchify from 'watchify';
+import webpack from 'webpack';
 
 const browserSync = require('browser-sync').create(); 
 const sassOpts = { outputStyle: 'compressed', errLogToConsole: true };
-
-function compileScripts(watch) {
-  var bundler = watchify(browserify('./app/scripts/app.js', { debug: true }).transform('babelify', {presets: ['es2015']}));
-
-  function rebundle() {
-    bundler.bundle()
-      .on('error', function(err) { console.error(err); this.emit('end'); })
-      .pipe(source('app.js'))
-      //.pipe(buffer())
-      //.pipe(fs.createWriteStream('app.js'))
-      .pipe(gulp.dest('./dist/scripts'))
-      .pipe(browserSync.stream());
-  }
-
-  if (watch) {
-    bundler.on('update', function() {
-      console.log('-> bundling...');
-      rebundle();
-    });
-  }
-
-  rebundle();
-}
 
 gulp.task('styles', () => {
   gulp.src('./app/styles/*.scss')
    .pipe(sass(sassOpts))
    .pipe(gulp.dest('./dist/styles/'))
+   .pipe(minifyCss())
+   .pipe(rename('resume.min.css'))
+   .pipe(gulp.dest('./app/styles'))
    .pipe(browserSync.stream());
 });
 
@@ -49,20 +30,65 @@ gulp.task('pdf', () => {
     .pipe(gulp.dest('./dist/'));
 });
 
-gulp.task('compile', () => {
-  return compileScripts();
+
+var webpackConfig = (watch) => {
+  return {
+    entry: './app/scripts/app.js',
+    output: {
+      path: './dist/scripts',
+      filename: 'app.js'
+    },
+    module: {
+      loaders: [
+        {
+          test: /[\.jsx|\.js]$/,
+          exclude: /(node_modules|bower_components)/,
+          loader: 'babel-loader'
+        }
+      ]
+    },
+    resolve: {
+      modulesDirectories: ['node_modules', 'app/scripts'],
+      extensions: ['', '.webpack.js', '.web.js', '.js', '.jsx']
+    },
+    externals: {
+    }
+  };
+};
+
+gulp.task('polyfill', () => {
+  gulp.src('app/scripts/details.polyfill.js')
+    .pipe(gulp.dest('dist/scripts'))
+    .pipe(uglify())
+    .pipe(rename('polyfill.min.js'))
+    .pipe(gulp.dest('app/scripts'));
 });
 
-gulp.task('build', ['styles', 'html'], () => {return compileScripts()});
+gulp.task('compile', ['polyfill'], (done) => {
+  var config = webpackConfig(false);
+  webpack(config).run(function(err, stats) {
+    if(err) {
+      console.log('Error', err);
+    }
+    else {
+      console.log(stats.toString());
+    }
+    browserSync.reload();
+    done();
+  });
+  //return compileScripts();
+});
 
-gulp.task('watch', ['styles', 'html', 'pdf'], () => {
+gulp.task('build', ['styles', 'html', 'compile']);
+
+gulp.task('watch', ['styles', 'html', 'compile', 'pdf'], () => {
 
   browserSync.init({
     server: "./dist/"
   });
 
-  compileScripts(true);
   gulp.watch('app/*.html', ['html']);
+  gulp.watch('app/scripts/*.js', ['compile']);
   gulp.watch('./app/styles/*.scss', ['styles'])
    .on('change', (e) => { 
      console.log(`File ${e.path} was ${e.type}, running Sass task...`); 
