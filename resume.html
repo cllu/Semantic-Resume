@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+
+  <meta name="author" content="Chunliang Lyu">
+  <title>Chunliang Lyu — Resume</title>
+  <link rel="shortcut icon" href="/favicon.ico"/>
+  <link rel="stylesheet" type="text/css" href="styles/resume.css">
+  <script src="scripts/details.polyfill.js"></script>
+
+  <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+    "@type": "ListItem",
+    "position": 1,
+    "item": {
+      "@id": "https://chunlianglyu.com/",
+      "name": "Home"
+    }
+  },{
+    "@type": "ListItem",
+    "position": 2,
+    "item": {
+      "@id": "https://chunlianglyu.com/resume/",
+      "name": "Resume"
+    }
+  }]
+}
+</script>
+</head>
+<body>
+
+<main class="page" itemscope itemtype="http://schema.org/Person">
+
+  <a href="resume.pdf" class="download-link">Download PDF</a>
+
+  <section class="basic">
+    <h1 itemprop="name">Chunliang Lyu</h1>
+    <meta itemprop="alternateName" content="Chunliang Lu">
+    <meta itemprop="alternateName" content="吕春良">
+
+    <ul>
+      <li><a href="https://chunlianglyu.com/" target="_blank" itemprop="url">https://chunlianglyu.com</a></li>
+      <li><a href="mailto:hi@chunlianglyu.com" target="_blank" itemprop="email">hi@chunlianglyu.com</a></li>
+      <li><a href="https://github.com/cllu" itemprop="sameAs">github.com/cllu</a></li>
+      <li><link href="https://twitter.com/chunlianglyu" itemprop="sameAs"></li>
+      <li><link href="https://scholar.google.com.hk/citations?user=c5GAV_MAAAAJ" itemprop="sameAs"></li>
+      <li><link href="https://www.linkedin.com/in/chunlianglyu" itemprop="sameAs"></li>
+      <li><link href="http://stackoverflow.com/users/693110/chunliang-lyu" itemprop="sameAs"></li>
+      <li><span class="contact hide" itemprop="telephone">+852-54943678</span></li>
+    </ul>
+  </section>
+
+  <section class="education">
+    <h2>Education</h2>
+
+    <details open>
+      <summary>
+        <span itemprop="alumniOf" itemscope itemtype="http://schema.org/EducationalOrganization">
+          <span itemprop="name">The Chinese University of Hong Kong</span>,
+        </span>
+        Ph.D.
+        <time>2011 - 2016</time>
+      </summary>
+      <ul>
+        <li class="hide">Adviser:
+          <a itemprop="knows" href="http://www.se.cuhk.edu.hk/people/wlam.html">Professor LAM Wai</a>
+        </li>
+        <li>Research Area: Entity Retrieval, Natural Language Processing, Knowledge Graph.</li>
+
+      </ul>
+    </details>
+
+    <details>
+      <summary>
+        <span itemprop="alumniOf" itemscope itemtype="http://schema.org/EducationalOrganization">
+          <span itemprop="name">National Taiwan University of Science and Technology</span>,
+        </span>
+        Visiting Student
+        <time>2011 - 2011</time>
+      </summary>
+      <ul>
+        <li class="hide">Adviser:
+          <a itemprop="knows" href="http://faculty.csie.ntust.edu.tw/~klchung/Prof_English.htm">Professor CHUNG Kuo-Liang</a>
+        </li>
+        <li>Area of Study: Image Classification, Pattern Recognition</li>
+      </ul>
+    </details>
+    <details>
+      <summary>
+        <span itemprop="alumniOf" itemscope itemtype="http://schema.org/EducationalOrganization">
+          <span itemprop="name">Beijing Institute of Technology</span>,
+        </span>
+        B.S. in Information Engineering, GPA 3.9
+        <time>2007 - 2011</time>
+      </summary>
+    </details>
+  </section>
+
+  <section class="projects">
+    <h2>Projects<a target="_blank" href="https://chunlianglyu.com/projects/">[MORE]</a></h2>
+
+    <details open>
+      <summary>
+        <span itemprop="worksFor" itemscope itemtype="http://schema.org/Organization">
+          <span itemprop="name">Hyperlink (<a href="https://hyperlinkapp.com/">https://hyperlinkapp.com</a>)</span>,
+        </span>
+        Co-founder
+        <time>2014 - 2015</time>
+      </summary>
+
+      <p>
+        Hyperlink is a unified platform for searching and managing personal information streams across 13 online services,
+        such as social updates from Twitter and cloud files from Dropbox.
+      </p>
+
+      <ul>
+        <!--<li>Cofounded HyperLab Limited, with the support from Hong Kong TSSSU project</li>-->
+        <li>
+          Developed the backend in Python 3, with Flask/PostgreSQL/ElasticSearch/Celery as main stack.
+        </li>
+        <li>
+          Designed the frontend using AngularJS, including extensive unit and end-to-end testing.
+        </li>
+        <li>
+          Deployed the system on Amazon Web Services with Docker, designed and validated the scaling strategy.
+        </li>
+      </ul>
+    </details>
+
+    <details open>
+      <summary>
+        SwitchPal, Project Leader
+        <time>2014 - 2015</time>
+      </summary>
+      <p>
+        SwitchPal is a device that snaps over an existing switch and turn it into a smart one.
+        Equipped with multiple sensors, it can automate household appliances according to personal preferences.
+        <!--Designed a smart device to toggle the switch using a step motor, -->
+        <!--Designed a device to toggle the switch using a step motor, .-->
+      </p>
+      <ul>
+        <!--<li>Collaborated with a group of four people involving hardware engineer, designer, and software developer.</li>-->
+        <li>
+          Designed the hardware based on the <a href="http://www.ti.com/product/cc2540">TI CC2540</a> MCU,
+          controllable via a custom Bluetooth 4.0 profile.
+        </li>
+        <li>
+          Implemented and released the iOS and Android companion apps.
+        </li>
+        <li>
+          Saved more than 2/3 electricity by deploying to student hostels to automatically control the air conditioners.
+        </li>
+      </ul>
+    </details>
+
+    <details open>
+      <summary>
+        Entity Modeling and Retrieval System, Principle Researcher
+        <time>2012 - 2015</time>
+      </summary>
+      <p>
+        Proposed a novel entity retrieval system based on entity factoid hierarchy,
+        together with a new entity model considering the HTML structure in webpages.
+        Significantly improved the state-of-the-art performance.
+      </p>
+
+      <ul>
+        <li>
+          Consolidated information about millions of entities from ClueWeb09 (25TB), Freebase (380GB) and DBpedia.
+        </li>
+        <li>
+          Designed an entity processing pipeline based on Spark, decreasing the processing time from days to hours.
+        </li>
+        <li>
+          Implemented multiple retrieval models in Lucene, with customized query analyzer to handle entity queries.
+        </li>
+      </ul>
+    </details>
+
+    <details open>
+      <summary>
+        Twitter Recommendation System, Principle Researcher
+        <time>2011 - 2012</time>
+      </summary>
+      <p>
+        Built a personalized tweets recommendation system based on user profiles,
+        achieved superior performance.
+      </p>
+
+      <ul>
+        <li>
+          Constructed user profiles by aggregating keywords in tweets and propagating interests among friends.
+        </li>
+        <li>
+          Crawled millions of tweets from hundreds of thousands of Twitter users to test the system.
+        </li>
+      </ul>
+    </details>
+
+  </section>
+
+  <section>
+    <h2>Technical Skills</h2>
+
+    <ul>
+      <li>
+        Language:
+        <span itemscope itemtype="http://schema.org/Language">Scala</span>,
+        <span itemscope itemtype="http://schema.org/Language">Python</span>,
+        <span itemscope itemtype="http://schema.org/Language">Java</span>,
+        <span itemscope itemtype="http://schema.org/Language">JavaScript</span>,
+        <span itemscope itemtype="http://schema.org/Language">PHP</span>,
+        <span itemscope itemtype="http://schema.org/Language">C++</span>
+      </li>
+      <li>
+        Database: PostgreSQL, MongoDB, MySQL
+      </li>
+      <li>
+        Framework: ElasticSearch, Lucene, Hadoop, Spark, ReactJS, AngularJS
+      </li>
+      <li>
+        Tool: Git, Gulp, Linux, Docker, Amazon Web Services
+      </li>
+    </ul>
+  </section>
+
+  <section class="experience">
+    <h2>Experience</h2>
+    <ul>
+      <li>Semi-finalist in the 2015 Global Venture Labs Investment Competition,
+        <time>2015</time></li>
+      <li>Teaching Assistant for four undergraduate engineering courses at CUHK,
+        <time>2012-2015</time></li>
+      <li>
+        Volunteer for the
+        <span itemprop="worksFor" itemscope itemtype="http://schema.org/Organization">
+          <span itemprop="name">Charles K Kao Foundation for Alzheimer’s Disease</span>,
+        </span>
+        <time>2011</time>
+      </li>
+      <li>
+        Organizer of the 6th Information Security and Countermeasures Contest, <time>2010</time>
+      </li>
+      <li>
+        Meritorious Winner in <em>Mathematical Contest In Modeling</em>, <time>2009</time>
+      </li>
+    </ul>
+  </section>
+
+  <section class="publication">
+    <h2>Selected Publications<a target="_blank" href="https://scholar.google.com.hk/citations?user=c5GAV_MAAAAJ">[MORE]</a></h2>
+    <ul>
+      <li itemscope itemtype="http://schema.org/ScholarlyArticle">
+
+        <strong itemprop="author">C. Lu</strong>,
+        <span itemprop="author">W. Lam</span>,
+        <span itemprop="author">Y. Liao</span>.
+
+        <span itemprop="headline">Entity Retrieval via Entity Factoid Hierarchy.</span>
+        In:
+        <em itemprop="isPartOf" itemscope itemtype="http://schema.org/Book">
+          <span itemprop="name">Proceedings of the 53rd Annual Meeting of the Association for Computational Linguistics (ACL)</span>.
+        </em>
+        <span itemprop="datePublished">2015</span>.
+        <span class="web-only">[<a itemprop="url" href="https://chunlianglyu.com/docs/acl15.pdf">PDF</a>]</span>
+        <meta itemprop="image" content="http://placehold.it/160x90">
+      </li>
+
+      <li itemscope itemtype="http://schema.org/ScholarlyArticle" class="hide">
+        <span itemprop="author">Lidong Bing</span>,
+        <span itemprop="author">Wai Lam</span>,
+        <span itemprop="author">Shoaib Jameel</span>,
+        <strong itemprop="author">Chunliang Lu</strong>.
+
+        <span itemprop="headline">Website Community Mining from Query Logs with Two-phase Clustering</span>.
+        In:
+        <em itemprop="isPartOf" itemscope itemtype="http://schema.org/Book">
+          <span itemprop="name">Proceedings of the 15th International Conference on Intelligent Text Processing and Computational Linguistics(CICLing)</span>.
+        </em>
+        <span itemprop="datePublished">2014</span>.
+        <span class="web-only">[<a itemprop="url" href="https://chunlianglyu.com/docs/cicling14.pdf">PDF</a>]</span>
+        <meta itemprop="image" content="http://placehold.it/160x90">
+      </li>
+
+      <li itemscope itemtype="http://schema.org/ScholarlyArticle" class="hide">
+        <strong itemprop="author">C. Lu</strong>,
+        <span itemprop="author">L. Bing</span>,
+        <span itemprop="author">W. Lam</span>,
+        <span itemprop="author">K. Chan</span>,
+        <span itemprop="author">Y. Gu</span>.
+
+        <span itemprop="headline">Web Entity Detection for Semi-structured Text Data Records with Unlabeled Data</span>.
+        <em itemprop="isPartOf" itemscope itemtype="http://schema.org/Periodical">
+          <span itemprop="name">International Journal of Computational Linguistics and Applications (IJCLA)</span>.
+        </em>
+        <span itemprop="datePublished">2013</span>.
+        <span class="web-only">[<a itemprop="url" href="https://chunlianglyu.com/docs/ijcla13.pdf">PDF</a>]</span>
+        <meta itemprop="image" content="http://placehold.it/160x90">
+      </li>
+
+      <li itemscope itemtype="http://schema.org/ScholarlyArticle">
+        <strong itemprop="author">C. Lu</strong>,
+        <span itemprop="author">L. Bing</span>,
+        <span itemprop="author">W. Lam</span>.
+
+        <span itemprop="headline">Structured Positional Entity Language Model for Enterprise Entity Retrieval</span>.
+        In:
+        <em itemprop="isPartOf" itemscope itemtype="http://schema.org/Book">
+          <span itemprop="name">Proceedings of the 22nd ACM Conference on Information and Knowledge Management (CIKM)</span>.
+        </em>
+        <span itemprop="datePublished">2013</span>.
+        <span class="web-only">[<a itemprop="url" href="https://chunlianglyu.com/docs/cikm13.pdf">PDF</a>]</span>
+        <meta itemprop="image" content="http://placehold.it/160x90">
+      </li>
+
+      <li itemscope itemtype="http://schema.org/ScholarlyArticle" class="hide">
+        <strong itemprop="author">C. Lu</strong>,
+        <span itemprop="author">W. Lam</span>,
+        <span itemprop="author">Y. Zhang</span>.
+
+        <span itemprop="headline">Twitter User Modeling and Tweets Recommendation based on Wikipedia Concept Graph</span>.
+        In:
+        <em itemprop="isPartOf" itemscope itemtype="http://schema.org/Book">
+          <span itemprop="name">The AAAI Workshop on Intelligent Techniques For Web Personalization and Recommender Systems (ITWP)</span>.
+        </em>
+        <span itemprop="datePublished">2012</span>.
+        <span class="web-only">[<a itemprop="url" href="https://chunlianglyu.com/docs/itwp12.pdf">PDF</a>]</span>
+        <meta itemprop="image" content="http://placehold.it/160x90">
+      </li>
+    </ul>
+  </section>
+
+  <section class="articles web-only">
+    <h2>Selected Articles<a target="_blank" href="https://chunlianglyu.com/articles/">[MORE]</a></h2>
+    <ul>
+
+      <li itemscope itemtype="http://schema.org/BlogPosting">
+        <a href="https://chunlianglyu.com/articles/sorm2/">
+          <span itemprop="headline">SORM2: Digging into Scala Internals</span>
+        </a> - <time itemprop="datePublished" datetime="2015-12-04">Dec, 2015</time>
+        <meta itemprop="image" content="http://placehold.it/160x90">
+      </li>
+
+      <li itemscope itemtype="http://schema.org/BlogPosting">
+        <a href="https://chunlianglyu.com/articles/html-resume-with-semantic-markup/">
+          <span itemprop="headline">HTML Resume with Semantic Markup</span>
+        </a> - <time itemprop="datePublished" datetime="2015-11-20">Nov, 2015</time>
+        <meta itemprop="image" content="http://placehold.it/160x90">
+      </li>
+
+      <li itemscope itemtype="http://schema.org/BlogPosting">
+        <a href="https://chunlianglyu.com/articles/developing-chrome-extension-with-angularjs/">
+          <span itemprop="headline">Developing Chrome Extensions with AngularJS</span>
+        </a> - <time itemprop="datePublished" datetime="2014-11-26">Nov, 2014</time>
+        <meta itemprop="image" content="http://placehold.it/160x90">
+      </li>
+
+      <li itemscope itemtype="http://schema.org/BlogPosting">
+        <a href="https://chunlianglyu.com/articles/control-air-conditioner-with-raspberry-pi/">
+          <span itemprop="headline">Control the Air Conditioner with Raspberry Pi</span>
+        </a> - <time itemprop="datePublished" datetime="2013-08-08">Aug, 2013</time>
+        <meta itemprop="image" content="http://placehold.it/160x90">
+      </li>
+    </ul>
+  </section>
+
+</main>
+
+</body>
+</html>
