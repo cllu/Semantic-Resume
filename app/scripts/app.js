@@ -4,6 +4,9 @@ var beautify_html = require('js-beautify').html;
 
 // sample markdown text
 var dummy = require("!!raw!../resume.md");
+if (!localStorage.resumeText) {
+  localStorage.resumeText = dummy;
+}
 
 // polyfill js and stylesheets that will be injected to a self-contained HTML
 var polyfill = require("!!raw!./polyfill.min.js");
@@ -25,7 +28,7 @@ function updatePreview() {
 
 // on page load
 var editor = CodeMirror(document.getElementById('editor'), {
-  value: dummy,
+  value: localStorage.resumeText,
   mode: "gfm",
   //lineNumbers: true,
   lineWrapping: true
@@ -34,6 +37,7 @@ editor.setSize("600px", "100%");
 
 editor.on('change', function() {
   updatePreview();
+  localStorage.resumeText = editor.getValue();
 });
 updatePreview();
 
