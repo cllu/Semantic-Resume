@@ -5,6 +5,7 @@ import minifyCss from 'gulp-minify-css';
 import uglify from 'gulp-uglify';
 import sass from 'gulp-sass';
 import webpack from 'webpack';
+import ghPages from 'gulp-gh-pages';
 
 const browserSync = require('browser-sync').create(); 
 const sassOpts = { outputStyle: 'compressed', errLogToConsole: true };
@@ -96,3 +97,12 @@ gulp.task('watch', ['styles', 'html', 'compile', 'pdf'], () => {
 });
 
 gulp.task('default', ['watch']);
+
+gulp.task('cname', () => {
+  require('fs').writeFileSync('dist/CNAME', 'semantic-resume.chunlianglyu.com');
+});
+
+gulp.task('deploy', ['build', 'cname'], function() {
+  return gulp.src('./dist/**/*')
+    .pipe(ghPages());
+});

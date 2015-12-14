@@ -28,6 +28,7 @@
     "browser-sync": "^2.10.0",
     "chai": "^3.4.1",
     "gulp": "^3.9.0",
+    "gulp-gh-pages": "^0.5.4",
     "gulp-minify-css": "^1.2.2",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.1.0",

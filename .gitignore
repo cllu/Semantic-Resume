@@ -8,3 +8,6 @@ app/scripts/polyfill.min.js
 .sass-cache
 
 *.css.map
+
+# used by gulp-gh-pages
+.publish
