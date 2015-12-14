@@ -26,12 +26,6 @@ gulp.task('html', () => {
     .pipe(browserSync.stream());
 });
 
-gulp.task('pdf', () => {
-  gulp.src('resume.pdf')
-    .pipe(gulp.dest('./dist/'));
-});
-
-
 var webpackConfig = (watch) => {
   return {
     entry: './app/scripts/app.js',
@@ -82,7 +76,7 @@ gulp.task('compile', ['polyfill'], (done) => {
 
 gulp.task('build', ['styles', 'html', 'compile']);
 
-gulp.task('watch', ['styles', 'html', 'compile', 'pdf'], () => {
+gulp.task('watch', ['styles', 'html', 'compile'], () => {
 
   browserSync.init({
     server: "./dist/"
@@ -98,10 +92,12 @@ gulp.task('watch', ['styles', 'html', 'compile', 'pdf'], () => {
 
 gulp.task('default', ['watch']);
 
+// setup custom domain for GitHub Pages
 gulp.task('cname', () => {
   require('fs').writeFileSync('dist/CNAME', 'semantic-resume.chunlianglyu.com');
 });
 
+// deploy to the GitHub Pages
 gulp.task('deploy', ['build', 'cname'], function() {
   return gulp.src('./dist/**/*')
     .pipe(ghPages());
