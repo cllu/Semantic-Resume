@@ -12,12 +12,12 @@ const htmlTemplate = (name, content) => `<!DOCTYPE html>
   <title>${name} — Resume</title>
   <link rel="shortcut icon" href="/favicon.ico"/>
   <link rel="stylesheet" href="styles/resume.css">
-  <script src="scripts/details.polyfill.js"></script>
 </head>
 <body>
 <main class="page" itemscope itemtype="http://schema.org/Person">
 ${content}
 </main>
+  <script src="scripts/details.polyfill.js"></script>
 </body>
 </html>`;
 

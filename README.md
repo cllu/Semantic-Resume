@@ -2,6 +2,8 @@
 
 A simple HTML resume with semantic markups.
 
+[![Build Status](https://travis-ci.org/cllu/Semantic-Resume.svg?branch=master)](https://travis-ci.org/cllu/Semantic-Resume)
+
 ## Get Started
 
 After downloading/cloning the repository, open the index.html in your browser. Modify the file to get your resume.
