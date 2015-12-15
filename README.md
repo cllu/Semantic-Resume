@@ -1,4 +1,4 @@
-# Semantic HTML Resume
+# Semantic Resume
 
 A simple HTML resume with semantic markups.
 
@@ -13,15 +13,13 @@ Features:
 - Responsive layout.
 
 ## Shameless Plug
-I am looking for a fulltime developer job,
-  preferably in San Francisco or Bay Area (That is where the smart guys gather around, right?).
+I am looking for a fulltime developer job.
 I have spent four years on entity search and natural language processing,
   and have much experience in ElasticSearch, Lucene and Spark.
 I speak pretty well in Python, Scala, Javascript and Java,
   and ok in Go, PHP and C++.
 I love building stuff and believe in the power of technology,
   that is why I have spend the last year doing my startup [Hyperlink](https://hyperlinkapp.com).
-Currently I have no working visa so I need your visa sponsorship.
 You can check [my resume](https://chunlianglyu.com/resume/)
   and [my other projects](https://chunlianglyu.com/projects/).
 <a href="mailto:hi@chunlianglyu.com">Talk to me</a> if you are interested.
@@ -158,6 +156,24 @@ Main stack:
 - BrowserSync for live reloading and multiple device testing;
 - mocha/chai for testing, and Travis CI so I can sleep tight in night;
 - GitHub Pages for hosting, and CloudFlare for free SSL.
+
+## Related
+
+There are plenty of resume generation projects over the Internet, free or commercial.
+These are some of them that I have surveyed.
+If you are not comfortable with hosting your resume,
+  or dealing stuff like HTML and CSS, you would be better choose alternatives.
+
+- [represent.io](https://represent.io), paid service, nice interface, provides hosting and analytics
+- [creddle](http://creddle.io/)
+- [JobCV](http://www.jobcv.me/)
+- [ResumeRuby](https://resumeruby.com)
+
+Resume tips:
+
+- [A pretty old discussion on Hacker News](https://news.ycombinator.com/item?id=903280)
+- [How to write a Developer CV/Résumé that will get you hired](http://www.slideshare.net/perlcareers/how-to-write-a-developer-cvrsum-that-will-get-you-hired) 
+  and the [discussion on Hacker News](https://news.ycombinator.com/item?id=8582793)
 
 ## License
 
