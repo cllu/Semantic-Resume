@@ -13,36 +13,10 @@
 </head>
 <body>
 
-<main>
+<div id="container"></div>
 
-  <aside>
-    <div id="editor"></div>
-    <footer>
-      <p>
-        Made by <a href="https://chunlianglyu.com/">Chunliang Lyu</a>,
-        check <a href="https://github.com/cllu/Semantic-Resume">the source code</a>.
-      </p>
-    </footer>
-  </aside>
-
-  <div id="resizer"></div>
-  <div id="preview">
-    <pre id="source"></pre>
-    <ul id="actions">
-      <li id="toggle-editor" class="on" title="Toggle Editor">
-        <i class="fa fa-clipboard"></i>
-      </li>
-      <li id="toggle-code" title="Toggle HTML Source">
-        <i class="fa fa-code"></i>
-      </li>
-      <li id="download" title="Download HTML Resume">
-        <i class="fa fa-download"><a download="resume.html"></a></i>
-      </li>
-    </ul>
-  </div>
-
-</main>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.3/react.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.3/react-dom.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.9.0/codemirror.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.9.0/addon/mode/overlay.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.9.0/mode/markdown/markdown.min.js"></script>

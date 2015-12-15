@@ -149,8 +149,9 @@ After compilation, the resulted files are put in the `dist` folder.
 
 Main stack:
 
-- scss for CSS preprocessor; [normalize.css](https://github.com/necolas/normalize.css); [Sheets-of-Paper](https://github.com/delight-im/HTML-Sheets-of-Paper) for the page style.
-- codemirror for the editor; marked for the Markdown parser;
+- react for the UI; codemirror for the editor; marked for the Markdown parser;
+- scss for CSS preprocessor; [normalize.css](https://github.com/necolas/normalize.css); [Sheets-of-Paper](https://github.com/delight-im/HTML-Sheets-of-Paper) for the page style;
+- fontawesome for the lovely icons;
 - gulp for building tool;
 - webpack with babel so we can enjoy the awesome stuff from ES6;
 - BrowserSync for live reloading and multiple device testing;
