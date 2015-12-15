@@ -7,10 +7,24 @@ A simple HTML resume with semantic markups.
 Features:
 
 - Single self-contained HTML file with HTML5 semantic tags;
-- Semantic markup using the vocabulary from semantic.org;
+- Semantic markup using the vocabulary from [semantic.org](https://semantic.org);
 - Generate from GitHub-flavored Markdown text with YAML header;
 - Exportable to PDF;
 - Responsive layout.
+
+## Shameless Plug
+I am looking for a fulltime developer job,
+  preferably in San Francisco or Bay Area (That is where the smart guys gather around, right?).
+I have spent four years on entity search and natural language processing,
+  and have much experience in ElasticSearch, Lucene and Spark.
+I speak pretty well in Python, Scala, Javascript and Java,
+  and ok in Go, PHP and C++.
+I love building stuff and believe in the power of technology,
+  that is why I have spend the last year doing my startup [Hyperlink](https://hyperlinkapp.com).
+Currently I have no working visa so I need your visa sponsorship.
+You can check [my resume](https://chunlianglyu.com/resume/)
+  and [my other projects](https://chunlianglyu.com/projects/).
+<a href="mailto:hi@chunlianglyu.com">Talk to me</a> if you are interested.
 
 ## Get started
 
@@ -21,7 +35,6 @@ To export to PDF, use print and then choose "Save as PDF" as the Destination.
 Only tested in Google Chrome.
 
 ## How it works
-
 
 ### Markdown
 
@@ -76,13 +89,15 @@ As you see,
 - `<main>` to hold the whole resume;
 - `<section>` to hold a section with proper CSS class, like Education or Projects;
 - `<h1>` to hold the name, only in the first section; and `<h2>` to hold the title for other sections;
-- `<details>` and `<summary>` to divide multiple items in a section;
+- `<details>` and `<summary>` to hold an item in a section;
 - `<time>` to hold datetimes or time spans.
 
 ### Semantic markup
 
 Machines are still dumb
   and probably cannot understand the meaning of a piece of text.
+It may guess that the text inside `h1` is probably a title,
+  but is does not know the exact meaning of the text.
 Let't teach them, using the vocabulary from http://schema.org/Person.
 The marked-up version would look like:
 
@@ -115,6 +130,18 @@ The marked-up version would look like:
 - the markup for the university is a bit of complicated, however it is not hard to understand.
   we tell a machine that we are an alumni of the defined EducationalOrganization,
   which has the given name and url link.
+
+Why the bother marking up the HTML?
+And what the hell is schema.org?
+Well, believe or not, this kind of markup is already everywhere.
+Go to a YouTube page and check its source code.
+Search engines need to understand the Web better so they can improve the search result quality,
+  that's why they join together to promote the semantic markup.
+From my point of view,
+  after four years of digging information from text during my PhD study,
+  I believe that [Semantic Web](https://en.wikipedia.org/wiki/Semantic_Web) is a better solution.
+As you can see, currently schema.org has limited support for describing a person,
+  however, that is already a good start.
   
 ### Develop
 
@@ -124,18 +151,14 @@ After compilation, the resulted files are put in the `dist` folder.
 
 Main stack:
 
-- scss for CSS preprocessor;
+- scss for CSS preprocessor; [normalize.css](https://github.com/necolas/normalize.css); [Sheets-of-Paper](https://github.com/delight-im/HTML-Sheets-of-Paper) for the page style.
+- codemirror for the editor; marked for the Markdown parser;
 - gulp for building tool;
-- webpack with babel so we can enjoy the sweet stuff from ES6;
-- Travis CI for automatic testing;
+- webpack with babel so we can enjoy the awesome stuff from ES6;
 - BrowserSync for live reloading and multiple device testing;
+- mocha/chai for testing, and Travis CI so I can sleep tight in night;
 - GitHub Pages for hosting.
-
-## Credits
-
-- [normalize.css](https://github.com/necolas/normalize.css)
-- Page style from [Sheets-of-Paper](https://github.com/delight-im/HTML-Sheets-of-Paper).
 
 ## License
 
-Beside the content of my resume, everything else is released under the Apache 2 License.
+Beside the content of my resume, everything else is released under the MIT License.
