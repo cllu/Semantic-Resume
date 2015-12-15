@@ -157,7 +157,7 @@ Main stack:
 - webpack with babel so we can enjoy the awesome stuff from ES6;
 - BrowserSync for live reloading and multiple device testing;
 - mocha/chai for testing, and Travis CI so I can sleep tight in night;
-- GitHub Pages for hosting.
+- GitHub Pages for hosting, and CloudFlare for free SSL.
 
 ## License
 
