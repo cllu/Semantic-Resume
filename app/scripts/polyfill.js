@@ -6,7 +6,7 @@
  * However, I do not care that much about old browsers.
  */
 (function (window, document) {
-  const elements = ['main', 'section', 'details', 'summary', 'time', 'footer'];
+  const elements = ['main', 'header', 'section', 'details', 'summary', 'time', 'footer'];
   for (var i = 0; i < elements.length; i++) {
     document.createElement(elements[i]);
   }

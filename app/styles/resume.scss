@@ -31,65 +31,80 @@ body {
   color: $primary-color;
 }
 
-/* For all headings */
-h1, h2, h3, h4, h5, h6 {
-  /* Avoid page breaks immediately */
-  page-break-after: avoid;
-}
-
-/* For all paragraph tags */
-p {
-  /* Reset the margin so that the text starts and ends at the expected marks */
-  margin: 0;
-  font-weight: 300;
-}
-
-/* For adjacent paragraph tags */
-p + p {
-  /* Restore the spacing between the paragraphs */
-  margin-top: 0.5cm;
-}
-
-/* For tables in the document */
-table {
-  /* Avoid page breaks inside */
-  page-break-inside: avoid;
-}
-
-ul, ol {
-  padding-left: 16px;
-  margin: 0 0;
-}
-
-strong {
-  font-weight: 700;
-}
-
-h1 {
-  @include fontSize(21px);
-  margin: 0 0 8px;
-  font-weight: 400;
-
-  @media #{$small-screen-only} {
-    padding-top: 10px;
-  }
-}
-
-/* For links in the document */
-a {
-  color: $primary-color;
-  // use a dashed underline for decoration
-  text-decoration: none;
-  border-bottom: 1px dashed $divider-color;
-}
-
 main {
   position: relative;
+
+  /* For all headings */
+  h1, h2, h3, h4, h5, h6 {
+    /* Avoid page breaks immediately */
+    page-break-after: avoid;
+  }
+
+  /* For all paragraph tags */
+  p {
+    /* Reset the margin so that the text starts and ends at the expected marks */
+    margin: 0;
+    font-weight: 300;
+  }
+
+  /* For adjacent paragraph tags */
+  p + p {
+    /* Restore the spacing between the paragraphs */
+    margin-top: 0.5cm;
+  }
+
+  /* For tables in the document */
+  table {
+    /* Avoid page breaks inside */
+    page-break-inside: avoid;
+  }
+
+  ul, ol {
+    padding-left: 16px;
+    margin: 0 0;
+  }
+
+  strong {
+    font-weight: 700;
+  }
+
+  /* For links in the document */
+  a {
+    color: $primary-color;
+    // use a dashed underline for decoration
+    text-decoration: none;
+    border-bottom: 1px dashed $divider-color;
+  }
 }
 
 /* Some old browsers need default styling */
 time {
   display: inline-block;
+}
+
+header {
+  text-align: center;
+
+  h1 {
+    @include fontSize(21px);
+    margin: 0 0 8px;
+    font-weight: 400;
+
+    @media #{$small-screen-only} {
+      padding-top: 10px;
+    }
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  li {
+    display: block;
+  }
+  a {
+    line-height: 1.2rem;
+  }
 }
 
 /* Sections
@@ -143,20 +158,6 @@ section {
 
   details + details {
     margin-top: 6px;
-  }
-
-  &.basic {
-    text-align: center;
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-    li {
-      display: block;
-    }
-    a {
-      line-height: 1.2rem;
-    }
   }
 
   &.education, &.projects {
@@ -229,3 +230,38 @@ section {
   }
 }
 
+$modern-left-column-width: 80px;
+.theme-modern {
+  header {
+    text-align: right;
+
+    h1 {
+      font-size: 46px;
+      border-bottom: 2px solid #DDD;
+      padding-bottom: 10px;
+    }
+  }
+
+  section {
+    padding-left: $modern-left-column-width;
+
+    h2 {
+      &:before {
+        content: '';
+        margin-left: -#{$modern-left-column-width};
+        width: 70px;
+        margin-right: 10px;
+        display: inline-block;
+        border-bottom: 5px solid #2b8cd2;
+      }
+    }
+    summary time {
+      float: left !important;
+      display: inline-block;
+      width: $modern-left-column-width;
+      text-align: right;
+      margin-left: -#{$modern-left-column-width};
+      padding-right: 10px;
+    }
+  }
+}

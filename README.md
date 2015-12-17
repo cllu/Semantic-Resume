@@ -10,6 +10,7 @@ Features:
 - Single self-contained HTML file with HTML5 semantic tags;
 - Semantic markup using the vocabulary from [semantic.org](https://semantic.org);
 - Generate from GitHub-flavored Markdown text with YAML header;
+- Basic theme support (try adding `theme: modern` to the YAML header);
 - Exportable to PDF;
 - Responsive layout.
 
@@ -67,11 +68,11 @@ For the above Markdown input,
 
 ```html
 <main>
-  <section class="basic">
+  <header>
     <h1>Chunliang Lyu</h1>
     <a href="https://chunlianglyu.com/">chunlianglyu.com</a>
     <a href="https://github.com/cllu">github.com/cllu</a>
-  </section>
+  </header>
   <section class="education">
     <h2>Education</h2>
     <details>
@@ -86,6 +87,7 @@ As you see,
   we try to use several HTML5 semantic tags to hold content:
 
 - `<main>` to hold the whole resume;
+- `<header>` to holder, you know, the header;
 - `<section>` to hold a section with proper CSS class, like Education or Projects;
 - `<h1>` to hold the name, only in the first section; and `<h2>` to hold the title for other sections;
 - `<details>` and `<summary>` to hold an item in a section;
@@ -102,11 +104,11 @@ The marked-up version would look like:
 
 ```html
 <main itemscope itemtype="http://schema.org/Person">
-  <section>
+  <header>
     <h1 itemprop="name">Chunliang Lyu</h1>
     <a href="https://chunlianglyu.com/" itemprop="url">chunlianglyu.com</a>
     <a href="https://github.com/cllu" itemprop="sameAs">github.com/cllu</a>
-  </section>
+  </header>
   <section>
     <h2>Education</h2>
     <details>

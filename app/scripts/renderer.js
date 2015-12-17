@@ -1,7 +1,7 @@
 import fm from 'front-matter';
 import marked from 'marked';
 
-const htmlTemplate = (name, content) => `<!DOCTYPE html>
+const htmlTemplate = (name, content, theme) => `<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8"/>
@@ -15,7 +15,7 @@ const htmlTemplate = (name, content) => `<!DOCTYPE html>
   <script src="scripts/polyfill.js"></script>
 </head>
 <body>
-<main class="page" itemscope itemtype="http://schema.org/Person">
+<main class="page theme-${theme}" itemscope itemtype="http://schema.org/Person">
 ${content}
 </main>
 </body>
@@ -33,6 +33,7 @@ function render(text) {
   const dateRe = /{\d{4}(?: - \d{4})?}/;
 
   var name = meta.name;
+  var theme = meta.theme || 'default';
 
   var renderer = new marked.Renderer();
   renderer.heading = function (text, level) {
@@ -40,7 +41,7 @@ function render(text) {
     switch (level) {
       case 1:
         // the top level heading is for title and contact information
-        html += `<section class="basic">\n<h1 itemprop="name">${text}</h1>\n<ul>\n`;
+        html += `<header>\n<h1 itemprop="name">${text}</h1>\n<ul>\n`;
         // render attributes
         if (meta.website) {
           html += `<li><a href="${meta.website}" itemprop="url">${meta.website}</a></li>\n`;
@@ -52,7 +53,7 @@ function render(text) {
           var githubLink = 'github.com/'+meta.github;
           html += `<li><a href="https://${githubLink}" itemprop="sameAs">${githubLink}</a></li>\n`;
         }
-        html += '</ul>\n</section>\n';
+        html += '</ul>\n</header>\n';
 
         if (!name) {
           name = text;
@@ -129,7 +130,7 @@ function render(text) {
   if (sectionOpened) {
     html += "</section>\n";
   }
-  return htmlTemplate(name, html);
+  return htmlTemplate(name, html, theme);
 }
 
 export default render;
