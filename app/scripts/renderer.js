@@ -1,7 +1,7 @@
 import fm from 'front-matter';
 import marked from 'marked';
 
-const htmlTemplate = (name, content, theme) => `<!DOCTYPE html>
+const htmlTemplate = (name, content, theme, style) => `<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8"/>
@@ -12,6 +12,7 @@ const htmlTemplate = (name, content, theme) => `<!DOCTYPE html>
   <title>${name} — Resume</title>
   <link rel="shortcut icon" href="/favicon.ico"/>
   <link rel="stylesheet" href="styles/resume.css">
+  <style>${style}</style>
   <script src="scripts/polyfill.js"></script>
 </head>
 <body>
@@ -34,6 +35,7 @@ function render(text) {
 
   var name = meta.name;
   var theme = meta.theme || 'default';
+  var style = meta.style || '';
 
   var renderer = new marked.Renderer();
   renderer.heading = function (text, level) {
@@ -130,7 +132,7 @@ function render(text) {
   if (sectionOpened) {
     html += "</section>\n";
   }
-  return htmlTemplate(name, html, theme);
+  return htmlTemplate(name, html, theme, style);
 }
 
 export default render;
