@@ -64,6 +64,17 @@ CodeMirror.defineMode("resume", function (config, parserConfig) {
 var Editor = React.createClass({
 
   componentDidMount() {
+    document.addEventListener('keydown', (e) => {
+      if (e.keyCode == 88 && e.altKey) {
+        console.log('toggle vim mode');
+        if (this.editor.getOption('keyMap') == 'default') {
+          this.editor.setOption('keyMap', 'vim');
+        } else {
+          this.editor.setOption('keyMap', 'default');
+        }
+        e.preventDefault();
+      }
+    });
   },
 
   componentWillReceiveProps(nextProps) {
@@ -80,6 +91,7 @@ var Editor = React.createClass({
     this.editor = CodeMirror(ref, {
       value: this.props.text,
       mode: "resume",
+      keyMap: 'default',
       matchBrackets: true,
       styleActiveLine: true,
       lineWrapping: true

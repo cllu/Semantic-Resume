@@ -10,8 +10,10 @@
 # - toggle the editor here
 # - toggle the preview HTML source code
 # - download the generated HTML file (with CSS/JS inlined)
-# 
+#
 # To export to PDF file, try print and then choose Save as PDF.
+#
+# Cannot live without VIM? Me too, Try Alt+X to enable VIM keybindings.
 #
 name: Chunliang Lyu
 website: https://chunlianglyu.com
