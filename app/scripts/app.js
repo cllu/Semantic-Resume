@@ -13,6 +13,54 @@ var dummy = require("!!raw!../resume.md");
 var polyfill = require("!!raw!./polyfill.min.js");
 var stylesheet = require("!!raw!../styles/resume.min.css");
 
+// define a mixed mode handling the YAML front matter
+CodeMirror.defineMode("resume", function (config, parserConfig) {
+  var gfmMode = CodeMirror.getMode(config, {
+    name: "gfm"
+  });
+
+  var yamlMode = CodeMirror.getMode(config, {name: "yaml"});
+
+  return {
+    startState() {
+      var state = gfmMode.startState();
+      var yamlState = yamlMode.startState();
+      return {
+        firstLine: true,
+        mode: gfmMode,
+        markdownState: state,
+        yamlState: yamlState
+      };
+    },
+    copyState(state) {
+      return {
+        mode: state.mode,
+        markdownState: gfmMode.copyState(state.markdownState),
+        yamlState: state.yamlState
+      };
+    },
+    token (stream, state) {
+      if(state.firstLine && stream.match(/---/, false)) {
+        state.firstLine = false;
+        state.mode = yamlMode;
+        return yamlMode.token(stream, state.yamlState);
+      } else if (state.mode == yamlMode && stream.match(/---/, false)) {
+        state.mode = gfmMode;
+        return yamlMode.token(stream, state.yamlState);
+      } else {
+        return state.mode.token(stream, state.markdownState);
+      }
+    },
+    innerMode(state) {
+      if (state.mode == gfmMode) {
+        return gfmMode.innerMode(state.markdownState);
+      } else {
+        return {mode: yamlMode, state: state};
+      }
+    }
+  };
+});
+
 var Editor = React.createClass({
 
   componentDidMount() {
@@ -21,6 +69,7 @@ var Editor = React.createClass({
   componentWillReceiveProps(nextProps) {
     if (nextProps.editorWidth != this.props.editorWidth) {
       this.editor.setSize(nextProps.editorWidth);
+      this.editor.refresh();
     }
   },
 
@@ -30,10 +79,11 @@ var Editor = React.createClass({
 
     this.editor = CodeMirror(ref, {
       value: this.props.text,
-      mode: "gfm",
+      mode: "resume",
+      matchBrackets: true,
+      styleActiveLine: true,
       lineWrapping: true
     });
-    this.editor.setSize("600px", "100%");
 
     this.editor.on('change', () => {
       this.props.onTextChange(this.editor.getValue());
@@ -119,19 +169,34 @@ var App = React.createClass({
 
   getInitialState() {
     var text = localStorage.resumeText || dummy;
+    var html = '', message = '';
+    try {
+      html = render(text);
+    } catch (err) {
+      message = 'The YAML front matter is not valid';
+    }
     return {
       showEditor: true,
       showSource: false,
       editorWidth: 600,
       text: text,
-      html: render(text),
+      html: html,
+      message: message,
       isResizing: false
     }
   },
 
   onTextChange(text) {
     localStorage.resumeText = text;
-    this.setState({html: render(text)});
+    try {
+      var html = render(text);
+      this.setState({
+        html: html,
+        message: ''
+      });
+    } catch (err) {
+      this.setState({message: 'The YAML front matter is not valid'});
+    }
   },
 
   onResizerMouseDown(e) {
@@ -208,6 +273,8 @@ var App = React.createClass({
             <a download="resume.html"/>
           </li>
         </ul>
+
+        <div className="message" style={{display: this.state.message ? 'block' : 'none'}}>{this.state.message}</div>
       </main>
     );
   }

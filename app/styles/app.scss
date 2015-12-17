@@ -50,8 +50,13 @@ aside {
   margin-left: 10px;
 
   .CodeMirror {
+    width: 600px;
+    height: 100%;
+
     font-family: $monospace-font;
     font-size: 14px;
+    // explicitly set the line height, otherwise the cursor position may be wrong
+    line-height: 18px;
   }
 }
 
@@ -142,6 +147,17 @@ footer {
       display: none;
     }
   }
+}
+
+.message {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  color: #a94442;
+  padding: 10px;
+  background-color: #f2dede;
+  border: 1px solid #ebccd1;
+  border-radius: 4px;
 }
 
 
