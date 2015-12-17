@@ -174,9 +174,9 @@ var App = React.createClass({
   },
 
   downloadHTML(e) {
-    var holder = e.target.querySelector('a');
-    var rendered = beautify_html(render(editor.getValue()));
-    rendered = rendered.replace('<script src="scripts/details.polyfill.js"></script>', `<script>${polyfill}</script>`);
+    var holder = e.target.parentNode.querySelector('a');
+    var rendered = beautify_html(this.state.html);
+    rendered = rendered.replace('<script src="scripts/polyfill.js"></script>', `<script>${polyfill}</script>`);
     rendered = rendered.replace('<link rel="stylesheet" href="styles/resume.css">', `<style>${stylesheet}</style>`);
     holder.setAttribute('href', 'data:text/plain;charset=utf8,' + encodeURIComponent(rendered));
     holder.click();
@@ -197,20 +197,15 @@ var App = React.createClass({
         <Preview html={this.state.html} showSource={this.state.showSource} isResizing={this.state.isResizing}/>
 
         <ul id="actions">
-          <li id="toggle-editor"
-              title="Toggle Editor"
-              className={this.state.showEditor ? 'on' : 'off'}
-              onClick={this.toggleEditor}>
-            <i className="fa fa-clipboard"/>
+          <li id="toggle-editor" title="Toggle Editor" className={this.state.showEditor ? 'on' : 'off'}>
+            <i className="fa fa-clipboard" onClick={this.toggleEditor}/>
           </li>
-          <li id="toggle-code"
-              title="Toggle HTML Source"
-              className={this.state.showSource ? 'on' : 'off'}
-              onClick={this.toggleSource}>
-            <i className="fa fa-code"/>
+          <li id="toggle-code" title="Toggle HTML Source" className={this.state.showSource ? 'on' : 'off'}>
+            <i className="fa fa-code" onClick={this.toggleSource}/>
           </li>
           <li id="download" title="Download HTML Resume">
-            <i className="fa fa-download" onClick={this.downloadHTML}><a download="resume.html"/></i>
+            <i className="fa fa-download" onClick={this.downloadHTML}/>
+            <a download="resume.html"/>
           </li>
         </ul>
       </main>

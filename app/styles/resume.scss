@@ -87,6 +87,11 @@ main {
   position: relative;
 }
 
+/* Some old browsers need default styling */
+time {
+  display: inline-block;
+}
+
 /* Sections
    ========================================================================== */
 section {

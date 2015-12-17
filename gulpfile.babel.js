@@ -55,7 +55,7 @@ var webpackConfig = (watch) => {
 };
 
 gulp.task('polyfill', () => {
-  gulp.src('app/scripts/details.polyfill.js')
+  gulp.src('app/scripts/polyfill.js')
     .pipe(gulp.dest('dist/scripts'))
     .pipe(uglify())
     .pipe(rename('polyfill.min.js'))
