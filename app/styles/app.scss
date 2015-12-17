@@ -135,6 +135,10 @@ footer {
     }
   }
 
+  li + li {
+    margin-left: 4px;
+  }
+
   i {
     text-align: center;
     line-height: 40px;

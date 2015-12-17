@@ -75,7 +75,9 @@ function render(text) {
         }
 
         // then add a new section, with appropriate class
-        html += `<section class="${text.toLowerCase()}">\n`;
+        var tokens = text.toLowerCase().split('<')[0].trim().split(' ');
+        var sectionClassName = tokens[tokens.length-1];
+        html += `<section class="${sectionClassName}">\n`;
         html += `<h2>${text}</h2>`;
         sectionOpened = true;
         break;

@@ -1,13 +1,32 @@
 ---
+# START HERE
+#
+# You can check the source code at https://github.com/cllu/Semantic-Resume
+#
+# Note: all your edit will be automatically saved to your browser.
+#       try edit and reload the browser.
+#
+# The right-upper corner has three buttons, from left to right:
+# - toggle the editor here
+# - toggle the preview HTML source code
+# - download the generated HTML file (with CSS/JS inlined)
+# 
+# To export to PDF file, try print and then choose Save as PDF.
+#
 name: Chunliang Lyu
 website: https://chunlianglyu.com
 email: hi@chunlianglyu.com
 github: cllu
+# There is a basic theme support, try change `default` to `modern`
+theme: default
+# You can also define custom CSS style here, it would be injected to the HTML
+style: >
+  header h1 {}
 ---
 
 # Chunliang Lyu
 
-## EDUCATION
+## Education
 
 ### [The Chinese University of Hong Kong], Ph.D. {2011 - 2016}
 - Research Area: Entity Retrieval, Natural Language Processing, Knowledge Graph.
@@ -16,7 +35,7 @@ github: cllu
 
 ### [Beijing Institute of Technology], B.S. in Information Engineering, GPA 3.9 {2007 - 2011}
 
-## PROJECTS
+## Projects [more](https://chunlianlgyu.com/projects/)
 
 ### [Hyperlink] (https://hyperlinkapp.com), Co-founder {2014 - 2015}
 Hyperlink is a unified platform for searching and managing personal information streams across 13 online
@@ -48,14 +67,14 @@ Built a personalized tweets recommendation system based on user profiles, achiev
 - Constructed user profiles by aggregating keywords in tweets and propagating interests among friends.
 - Crawled millions of tweets from hundreds of thousands of Twitter users to test the system.
 
-## TECHNICAL SKILLS
+## Technical Skills
 
 - Language: Scala, Python, Java, JavaScript, PHP, C++
 - Database: PostgreSQL, MongoDB, MySQL
 - Framework: ElasticSearch, Lucene, Hadoop, Spark, ReactJS, AngularJS
 - Tool: Git, Gulp, Linux, Docker, Amazon Web Services
 
-## EXPERIENCE
+## Experiences
 
 - Semifinalist in the 2015 Global Venture Labs Investment Competition, 2015
 - TeachingAssistant for four undergraduate engineering courses at CUHK, 2012-2015
@@ -63,13 +82,25 @@ Built a personalized tweets recommendation system based on user profiles, achiev
 - Organizer of the 6th Information Security and Countermeasures Contest, 2010
 - Meritorious Winner in Mathematical Contest In Modeling, 2009
 
-## SELECTED PUBLICATIONS
+## Selected Publications [more](https://scholar.google.com.hk/citations?user=c5GAV_MAAAAJ)
 
 - C. Lu, W. Lam, Y. Liao. Entity Retrieval via Entity Factoid Hierarchy. In: Proceedings of the 53rd Annual
   Meeting of the Association for Computational Linguistics (ACL). 2015.
 - C. Lu, L. Bing, W. Lam. Structured Positional Entity Language Model for Enterprise Entity Retrieval. In:
   Proceedings of the 22nd ACM Conference on Information and Knowledge Management (CIKM). 2013.
 
+## Selected Articles [more](https://chunlianglyu.com/articles/)
+
+- [SORM2: Digging into Scala Internals](https://chunlianglyu.com/articles/sorm2/), Dec 2015
+- [HTML Resume with Semantic Markup](https://chunlianglyu.com/articles/html-resume-with-semantic-markup/), Nov, 2015
+- [Developing Chrome Extensions with AngularJS](https://chunlianglyu.com/articles/developing-chrome-extension-with-angularjs/), Nov, 2014
+- [Control the Air Conditioner with Raspberry Pi](https://chunlianglyu.com/articles/control-air-conditioner-with-raspberry-pi/), Aug, 2013
+
+<!--
+  Markdown link definitions:
+  By specify link titles as schema.org property names such as `alumniOf`,
+  we mark the corresponding link text with semantic markup.
+-->
 [The Chinese University of Hong Kong]: https://www.cuhk.edu.hk/ (alumniOf)
 [Beijing Institute of Technology]: http://bit.edu.cn/ (alumniOf)
 [Hyperlink]: https://hyperlinkapp.com/ (worksFor)
