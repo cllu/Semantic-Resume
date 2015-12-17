@@ -47,6 +47,9 @@ var webpackConfig = (watch) => {
       extensions: ['', '.webpack.js', '.web.js', '.js', '.jsx']
     },
     externals: {
+      'codemirror': 'CodeMirror',
+      'react': 'React',
+      'react-dom': 'ReactDOM'
     }
   };
 };
