@@ -3,6 +3,7 @@
 A simple HTML resume with semantic markups.
 
 [![Build Status](https://travis-ci.org/cllu/Semantic-Resume.svg?branch=master)](https://travis-ci.org/cllu/Semantic-Resume)
+[![Dependency Status](https://gemnasium.com/cllu/Semantic-Resume.svg)](https://gemnasium.com/cllu/Semantic-Resume)
 
 Features:
 
