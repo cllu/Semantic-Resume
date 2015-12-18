@@ -8,12 +8,15 @@
 #
 # The right-upper corner has three buttons, from left to right:
 # - toggle the editor
-# - toggle the preview HTML source code
+# - toggle to show the HTML source code
 # - download the generated HTML file (with CSS/JS inlined)
+#
+# Did I mention that you can resize the editor? Try drag the right border of the editor.
 #
 # To export to PDF file, try print and then choose Save as PDF.
 #
-# Cannot live without VIM? Me too, Try Alt+X to enable VIM keybindings.
+# Cannot live without Vim? Me too, use Alt+X to toggle VIM key maps.
+# (Why Alt+X? This is the last Emacs keybinding that I remember)
 #
 name: Chunliang Lyu
 # there is a sad story about the spelling of my last name
@@ -26,7 +29,7 @@ sameAs:
   - https://twitter.com/chunlianglyu
   - https://linkedin.com/in/chunlianglyu
   - http://stackoverflow.com/users/693110/chunliang-lyu
-# There is a basic theme support, try change `default` to `modern`
+# There is a basic theme support, try change `default` to `modern` (which is very early-stage)
 theme: default
 # You can also define custom CSS style here, it would be injected to the HTML
 style: >
