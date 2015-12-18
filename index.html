@@ -4,48 +4,19 @@
   <meta charset="UTF-8">
   <title>Semantic Resume</title>
 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.9.0/codemirror.min.css"/>
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.0.0/styles/tomorrow-night.min.css">
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" type="text/css" href="styles/app.css"/>
+  <link rel="stylesheet" href="/styles/vendor.css">
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700">
+  <link rel="stylesheet" href="styles/app.css"/>
 </head>
 <body>
 
-<main>
+<div id="container"></div>
 
-  <aside>
-    <div id="editor"></div>
-    <footer>
-      <p>
-        Made by <a href="https://chunlianglyu.com/">Chunliang Lyu</a>,
-        read <a href="https://chunlianglyu.com/articles/html-resume-with-semantic-markup/">the article</a>,
-        check <a href="https://github.com/cllu/Semantic-Resume">the source code</a>.
-      </p>
-    </footer>
-  </aside>
+<script src="/scripts/vendor.js"></script>
 
-  <div id="resizer"></div>
-  <div id="preview">
-    <pre id="source"></pre>
-    <ul id="actions">
-      <li id="toggle-editor" class="on" title="Toggle Editor"><i class="fa fa-clipboard"></i></li>
-      <li id="toggle-code" title="Toggle HTML Source"><i class="fa fa-code"></i></li>
-      <li id="download" title="Download HTML Resume"><i class="fa fa-download"><a download="resume.html"></a></i></li>
-    </ul>
-  </div>
-
-</main>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.9.0/codemirror.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.9.0/addon/mode/overlay.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.9.0/mode/markdown/markdown.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.9.0/mode/gfm/gfm.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.0.0/highlight.min.js"></script>
-<script src="scripts/app.js"></script>
-<script type="text/javascript">
-</script>
+<script src='/scripts/app.js'></script>
 
 </body>
 </html>
