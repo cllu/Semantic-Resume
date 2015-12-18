@@ -153,7 +153,7 @@ After compilation, the resulted files are put in the `dist` folder.
 Main stack:
 
 - react for the UI; codemirror for the editor; marked for the Markdown parser;
-- scss for CSS preprocessor; [normalize.css](https://github.com/necolas/normalize.css); [Sheets-of-Paper](https://github.com/delight-im/HTML-Sheets-of-Paper) for the page style;
+- scss for CSS preprocessor;
 - fontawesome for the lovely icons;
 - gulp for building tool;
 - webpack with babel so we can enjoy the awesome stuff from ES6;
@@ -178,6 +178,11 @@ Resume tips:
 - [A pretty old discussion on Hacker News](https://news.ycombinator.com/item?id=903280)
 - [How to write a Developer CV/Résumé that will get you hired](http://www.slideshare.net/perlcareers/how-to-write-a-developer-cvrsum-that-will-get-you-hired) 
   and the [discussion on Hacker News](https://news.ycombinator.com/item?id=8582793)
+
+## Credit
+
+- Initial versions of my resume are forked from [JoyNeop/yart](https://github.com/JoyNeop/yart);
+- [Sheets-of-Paper](https://github.com/delight-im/HTML-Sheets-of-Paper) for the page style.
 
 ## License
 
