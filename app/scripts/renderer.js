@@ -36,6 +36,14 @@ function render(text) {
   var name = meta.name;
   var theme = meta.theme || 'default';
   var style = meta.style || '';
+  var alternateName = meta.alternateName;
+  if (!Array.isArray(alternateName)) {
+    alternateName = [alternateName]
+  }
+  var sameAs = meta.sameAs;
+  if (!Array.isArray(sameAs)) {
+    sameAs = [sameAs];
+  }
 
   var renderer = new marked.Renderer();
   renderer.heading = function (text, level) {
@@ -43,7 +51,14 @@ function render(text) {
     switch (level) {
       case 1:
         // the top level heading is for title and contact information
-        html += `<header>\n<h1 itemprop="name">${text}</h1>\n<ul>\n`;
+        html += `<header>\n<h1 itemprop="name">${text}</h1>\n`;
+        alternateName.forEach((name) => {
+          html += `<meta itemprop="alternateName" content="${name}">\n`
+        });
+        sameAs.forEach((same) => {
+          html += `<link itemprop="sameAs" href="${same}">\n`
+        });
+        html += `<ul>\n`;
         // render attributes
         if (meta.website) {
           html += `<li><a href="${meta.website}" itemprop="url">${meta.website}</a></li>\n`;
@@ -112,11 +127,11 @@ function render(text) {
                 <span itemprop="name">${text}</span>
               </span>`;
       default:
-        var out = '<a href="' + href + '"';
+        var out = `<a href="${href}" target="_blank"`;
         if (title) {
-          out += ' title="' + title + '"';
+          out += ` title="${title}"`;
         }
-        out += '>' + text + '</a>';
+        out += `>${text}</a>`;
         return out;
     }
   };

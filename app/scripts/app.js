@@ -166,8 +166,8 @@ var Footer = React.createClass({
     return (
       <footer>
         <p>
-          Made by <a href="https://chunlianglyu.com/">Chunliang Lyu</a>,
-          check <a href="https://github.com/cllu/Semantic-Resume">the source code</a>.
+          Made by <a href="https://chunlianglyu.com/" target="_blank">Chunliang Lyu</a>,
+          check <a href="https://github.com/cllu/Semantic-Resume" target="_blank">the source code</a>.
         </p>
       </footer>
     );

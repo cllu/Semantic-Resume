@@ -84,7 +84,7 @@ footer {
   flex: 1;
   height: 100%;
   position: relative;
-  overflow: hidden;
+  overflow: scroll;
 
   iframe {
     border: none;
@@ -92,19 +92,11 @@ footer {
     height: 100%;
   }
 
-  // by default, the source is hidden
-  #source {
-    display: none;
-    position: absolute;
+  pre {
+    height: 100%;
     overflow: scroll;
-    background-color: #1d1f21;
-
+    padding: 20px;
     margin: 0;
-    padding: 10px;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
   }
 }
 
@@ -172,4 +164,10 @@ footer {
   footer, #editor, .CodeMirror, #actions {
     display: none;
   }
+}
+
+// page style from resume
+@page {
+  size: A4 portrait;
+  margin: 1.5cm 1.5cm;
 }

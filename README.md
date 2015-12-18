@@ -15,13 +15,13 @@ Features:
 - Responsive layout.
 
 ## Shameless Plug
-I am looking for a fulltime developer job.
+I am looking for a full-time developer job.
 I have spent four years on entity search and natural language processing,
   and have much experience in ElasticSearch, Lucene and Spark.
 I speak pretty well in Python, Scala, Javascript and Java,
   and ok in Go, PHP and C++.
 I love building stuff and believe in the power of technology,
-  that is why I have spend the last year doing my startup [Hyperlink](https://hyperlinkapp.com).
+  that is why I have spent the last year doing my startup [Hyperlink](https://hyperlinkapp.com).
 You can check [my resume](https://chunlianglyu.com/resume/)
   and [my other projects](https://chunlianglyu.com/projects/).
 <a href="mailto:hi@chunlianglyu.com">Talk to me</a> if you are interested.
