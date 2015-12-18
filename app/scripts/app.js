@@ -120,6 +120,9 @@ var Source = React.createClass({
   componentDidMount() {
     hljs.highlightBlock(ReactDOM.findDOMNode(this));
   },
+  componentDidUpdate(nextProps) {
+    hljs.highlightBlock(ReactDOM.findDOMNode(this));
+  },
   render() {
     return (
       <pre>{beautify_html(this.props.html, { indent_size: 2 })}</pre>
