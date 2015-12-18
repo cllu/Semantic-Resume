@@ -1,0 +1,17 @@
+{
+  "name": "Semantic Resume",
+  "description": "HTML Resume with Semantic Markup",
+  "authors": [
+    "Chunliang Lyu"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/cllu/Semantic-Resume",
+  "moduleType": [],
+  "private": true,
+  "dependencies": {
+    "codemirror": "~5.9.0",
+    "font-awesome": "fontawesome#~4.5.0",
+    "react": "~0.14.3",
+    "highlightjs": "~9.0.0"
+  }
+}

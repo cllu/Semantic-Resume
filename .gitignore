@@ -1,4 +1,5 @@
 node_modules/
+app/bower_components/
 
 # build files
 dist

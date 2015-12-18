@@ -47,6 +47,8 @@ CodeMirror.defineMode("resume", function (config, parserConfig) {
       } else if (state.mode == yamlMode && stream.match(/---/, false)) {
         state.mode = gfmMode;
         return yamlMode.token(stream, state.yamlState);
+      } else if (state.mode == yamlMode) {
+        return state.mode.token(stream, state.yamlState);
       } else {
         return state.mode.token(stream, state.markdownState);
       }
@@ -56,6 +58,11 @@ CodeMirror.defineMode("resume", function (config, parserConfig) {
         return gfmMode.innerMode(state.markdownState);
       } else {
         return {mode: yamlMode, state: state};
+      }
+    },
+    blankLine(state) {
+      if (state.mode == gfmMode) {
+        return gfmMode.blankLine(state.markdownState)
       }
     }
   };
@@ -292,7 +299,4 @@ var App = React.createClass({
   }
 });
 
-ReactDOM.render(
-  <App/>,
-  document.getElementById('container')
-);
+export default App;

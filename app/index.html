@@ -4,9 +4,12 @@
   <meta charset="UTF-8">
   <title>Semantic Resume</title>
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.9.0/codemirror.min.css"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.0.0/styles/tomorrow-night.min.css">
+  <!-- build:css /styles/vendor.css -->
+  <link rel="stylesheet" href="bower_components/codemirror/lib/codemirror.css">
+  <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="bower_components/highlightjs/styles/tomorrow-night.css">
+  <!-- endbuild -->
+
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700">
   <link rel="stylesheet" href="styles/app.css"/>
@@ -15,17 +18,24 @@
 
 <div id="container"></div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.3/react.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.3/react-dom.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.9.0/codemirror.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.9.0/addon/mode/overlay.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.9.0/mode/markdown/markdown.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.9.0/mode/gfm/gfm.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.9.0/mode/yaml/yaml.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.9.0/addon/selection/active-line.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.9.0/keymap/vim.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.0.0/highlight.min.js"></script>
-<script src="scripts/app.js"></script>
+<!-- build:js /scripts/vendor.js -->
+<script src="bower_components/highlightjs/highlight.pack.min.js"></script>
+<script src="bower_components/react/react.min.js"></script>
+<script src="bower_components/react/react-dom.min.js"></script>
+<script src="bower_components/codemirror/lib/codemirror.js"></script>
+<script src="bower_components/codemirror/addon/mode/overlay.js"></script>
+<script src="bower_components/codemirror/mode/markdown/markdown.js"></script>
+<script src="bower_components/codemirror/mode/gfm/gfm.js"></script>
+<script src="bower_components/codemirror/mode/yaml/yaml.js"></script>
+<script src="bower_components/codemirror/addon/selection/active-line.js"></script>
+<script src="bower_components/codemirror/keymap/vim.js"></script>
+<!-- endbuild -->
+
+<!-- @if NODE_ENV!='production' -->
+<script src='http://127.0.0.1:27185/scripts/app.js'></script>
+<!--@endif--><!-- @if NODE_ENV=='production' -->
+<script src='/scripts/app.js'></script>
+<!--@endif-->
 
 </body>
 </html>
