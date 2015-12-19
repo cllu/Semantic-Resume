@@ -172,7 +172,6 @@ If you are not comfortable with hosting your resume,
 - [creddle](http://creddle.io/)
 - [JobCV](http://www.jobcv.me/)
 - [ResumeRuby](https://resumeruby.com)
-- [ResumeRuby](https://resumeruby.com)
 - [TheResumator](https://github.com/AmmsA/theresumator)
 
 Resume tips:
