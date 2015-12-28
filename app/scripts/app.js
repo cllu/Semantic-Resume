@@ -13,61 +13,6 @@ var dummy = require("!!raw!../resume.md");
 var polyfill = require("!!raw!./polyfill.min.js");
 var stylesheet = require("!!raw!../styles/resume.min.css");
 
-// define a mixed mode handling the YAML front matter
-CodeMirror.defineMode("resume", function (config, parserConfig) {
-  var gfmMode = CodeMirror.getMode(config, {
-    name: "gfm"
-  });
-
-  var yamlMode = CodeMirror.getMode(config, {name: "yaml"});
-
-  return {
-    startState() {
-      var state = gfmMode.startState();
-      var yamlState = yamlMode.startState();
-      return {
-        firstLine: true,
-        mode: gfmMode,
-        markdownState: state,
-        yamlState: yamlState
-      };
-    },
-    copyState(state) {
-      return {
-        mode: state.mode,
-        markdownState: gfmMode.copyState(state.markdownState),
-        yamlState: state.yamlState
-      };
-    },
-    token (stream, state) {
-      if(state.firstLine && stream.match(/---/, false)) {
-        state.firstLine = false;
-        state.mode = yamlMode;
-        return yamlMode.token(stream, state.yamlState);
-      } else if (state.mode == yamlMode && stream.match(/---/, false)) {
-        state.mode = gfmMode;
-        return yamlMode.token(stream, state.yamlState);
-      } else if (state.mode == yamlMode) {
-        return state.mode.token(stream, state.yamlState);
-      } else {
-        return state.mode.token(stream, state.markdownState);
-      }
-    },
-    innerMode(state) {
-      if (state.mode == gfmMode) {
-        return gfmMode.innerMode(state.markdownState);
-      } else {
-        return {mode: yamlMode, state: state};
-      }
-    },
-    blankLine(state) {
-      if (state.mode == gfmMode) {
-        return gfmMode.blankLine(state.markdownState)
-      }
-    }
-  };
-});
-
 var Editor = React.createClass({
 
   componentDidMount() {
@@ -96,12 +41,13 @@ var Editor = React.createClass({
     if (this.editor) return;
 
     this.editor = CodeMirror(ref, {
-      value: this.props.text,
-      mode: "resume",
+      mode: 'yaml-frontmatter',
+      base: 'gfm',
       keyMap: 'default',
       matchBrackets: true,
       styleActiveLine: true,
-      lineWrapping: true
+      lineWrapping: true,
+      value: this.props.text
     });
 
     this.editor.on('change', () => {

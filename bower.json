@@ -9,7 +9,7 @@
   "moduleType": [],
   "private": true,
   "dependencies": {
-    "codemirror": "~5.9.0",
+    "codemirror": "~5.10.0",
     "font-awesome": "fontawesome#~4.5.0",
     "react": "~0.14.3",
     "highlightjs": "~9.0.0"
