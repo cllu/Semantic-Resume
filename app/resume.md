@@ -44,16 +44,16 @@ style: >
 # Chunliang Lyu
 
 ## Summary
-I am looking for a full-time developer job.
+
 I have spent four years of PhD research on entity search and natural language processing,
-  and have much experience in ElasticSearch, Lucene and Spark.
-I speak proficiently in Python, Scala, Javascript and Java,
-  and OK in Go, PHP and C++.
+  and have extensive experience with ElasticSearch, Lucene and Spark.
 I love building stuff and believe in the power of technology,
   that is why I have spent the last year doing my startup [Hyperlink](https://hyperlinkapp.com).
-You can check [my resume](https://chunlianglyu.com/resume/)
-  and [my projects](https://chunlianglyu.com/projects/).
-<a href="mailto:hi@chunlianglyu.com">Talk to me</a> if you are interested in working with me.
+I speak proficiently in Python, Scala, Javascript and Java,
+  and OK in Go, PHP and C++.
+Check my previous projects [here](https://chunlianglyu.com/projects/),
+  most of them are open source on [GitHub](https://github.com/cllu).
+<a href="mailto:hi@chunlianglyu.com">Talk to me</a> if you are interested.
 
 ## Education
 

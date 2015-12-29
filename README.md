@@ -14,18 +14,6 @@ Features:
 - Exportable to PDF;
 - Responsive layout.
 
-## Shameless Plug
-I am looking for a full-time developer job.
-I have spent four years of PhD research on entity search and natural language processing,
-  and have much experience in ElasticSearch, Lucene and Spark.
-I speak proficiently in Python, Scala, Javascript and Java,
-  and OK in Go, PHP and C++.
-I love building stuff and believe in the power of technology,
-  that is why I have spent the last year doing my startup [Hyperlink](https://hyperlinkapp.com).
-You can check [my resume](https://chunlianglyu.com/resume/)
-  and [my other projects](https://chunlianglyu.com/projects/).
-<a href="mailto:hi@chunlianglyu.com">Talk to me</a> if you are interested in working with me.
-
 ## Get started
 
 Open https://semantic-resume.chunlianglyu.com/ and type in the editor.
@@ -146,9 +134,16 @@ As you can see, currently schema.org has limited support for describing a person
   
 ### Develop
 
-Use `npm install` to install dependent node modules.
-Run `gulp` to start developing with a live reload server.
-After compilation, the resulted files are put in the `dist` folder.
+
+To start development:
+
+- Use `npm install && bower install` to install dependent node modules.
+- Run `gulp --watch` to start developing with a live reload server.
+
+To deploy:
+
+- Run `gulp --production` to build production assets.
+- Run `gulp deploy` to deploy to GitHub Pages.
 
 Main stack:
 
