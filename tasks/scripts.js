@@ -72,7 +72,7 @@ gulp.task('scripts:server', function() {
   });
 });
 
-gulp.task('scripts:build', function() {
+gulp.task('scripts:build', ['styles'], function() {
   var wconfig = webpackConfig(false);
   return gulp.src('app/scripts/run.js')
     .pipe(webpackStream(wconfig))
