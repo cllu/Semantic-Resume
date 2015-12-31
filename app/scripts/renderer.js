@@ -66,6 +66,9 @@ function render(text) {
         if (meta.email) {
           html += `<li><a href="${meta.website}" itemprop="email">${meta.email}</a></li>\n`;
         }
+        if (meta.telephone) {
+          html += `<li><span itemprop="tel">${meta.telephone}</span></li>\n`;
+        }
         if (meta.github) {
           var githubLink = 'github.com/'+meta.github;
           html += `<li><a href="https://${githubLink}" itemprop="sameAs">${githubLink}</a></li>\n`;
