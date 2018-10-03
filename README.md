@@ -112,12 +112,12 @@ The marked-up version would look like:
 </main>
 ```
 
-- we mark the `<main>` element as `http://schema.org/Person` type, so a machine knows we are describing a person here;
-- we add `itemprop="name"` to the `h1` element, so a machine knows this is the name for the person;
-- we add `itemprop="url"` to the website link, so a machine knows that url is our website;
-- we add `itemprop="sameAs"` to the GitHub link, so a machine knows the GitHub account there is the same person here;
-- the markup for the university is a bit of complicated, however it is not hard to understand.
-  we tell a machine that we are an alumni of the defined EducationalOrganization,
+- We marked the `<main>` element as `http://schema.org/Person` type, so a machine knows we are describing a person here;
+- We add `itemprop="name"` to the `h1` element, so a machine knows this is the name for the person;
+- We add `itemprop="url"` to the website link, so a machine knows that the url is of our website;
+- We add `itemprop="sameAs"` to the GitHub link, so a machine knows the GitHub account there is the same person here;
+- The markup for the university is a bit of complicated, however it is not hard to understand.
+- We tell a machine that we are an alumni of the defined EducationalOrganization,
   which has the given name and url link.
 
 Why the bother marking up the HTML?
